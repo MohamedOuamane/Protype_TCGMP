@@ -147,6 +147,9 @@
     visible.forEach((offer) => {
       const row = templateRow.cloneNode(true);
       const cells = row.querySelectorAll('td');
+      ['Seller', 'Condition', 'Language', 'Print variant', 'Ships from', 'Quantity', 'Price + shipping', 'Action'].forEach((label, index) => {
+        if (cells[index]) cells[index].dataset.label = label;
+      });
       cells[0].querySelector('span:first-child').textContent = offer.seller;
       cells[0].querySelector('span:nth-child(2)').textContent = `${offer.flag} ${offer.sellerRating}`;
       cells[1].querySelector('span').textContent = offer.conditionCode;

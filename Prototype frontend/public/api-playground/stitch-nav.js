@@ -1,7 +1,7 @@
 (() => {
   if (!document.documentElement.dataset.marketplaceHeaderReady && !document.querySelector('script[data-shared-marketplace-header]')) {
     const sharedHeader = document.createElement('script');
-    sharedHeader.src = './marketplace-header.js';
+    sharedHeader.src = './marketplace-header.js?v=3';
     sharedHeader.async = false;
     sharedHeader.dataset.sharedMarketplaceHeader = 'true';
     document.head.append(sharedHeader);

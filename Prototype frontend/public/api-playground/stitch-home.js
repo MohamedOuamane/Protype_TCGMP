@@ -171,19 +171,21 @@
       "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-lg";
     grid.style.gap = "1.25rem";
     const demoCards = window.TCGDemo?.catalog.filter((card) => card.game === 'pokemon') || [];
+    const cards2026 = demoCards.filter((card) => card.set === 'Mega Evolution—Delta Reign');
+    const featured2026 = cards2026.slice(0, 3);
     grid.innerHTML = demoCards.slice(0, 5).map(product).join("") || Array.from({ length: 5 }, () => loadingProduct("pokemon")).join("");
     Promise.allSettled([
-      pokemon("Giratina"),
       pokemon("Pikachu"),
       pokemon("Mewtwo"),
-      randomPokemon(),
       randomPokemon(),
     ]).then((results) => {
       const available = results
         .filter((result) => result.status === "fulfilled" && result.value)
-        .map((result) => result.value);
-      grid.innerHTML = available.length
-        ? available.map(product).join("")
+        .map((result) => result.value)
+        .filter((card) => !demoCards.some((fixture) => fixture.id === card.id));
+      const selected = [...featured2026, ...available].slice(0, 5);
+      grid.innerHTML = selected.length
+        ? selected.map(product).join("")
         : demoCards.slice(0, 5).map(product).join("");
     });
     return;

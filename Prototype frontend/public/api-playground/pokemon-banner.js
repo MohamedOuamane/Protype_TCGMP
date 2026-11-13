@@ -1,15 +1,7 @@
 if (new URLSearchParams(location.search).get("game") === "pokemon") {
   const featuredSources = [
-    {
-      name: "Giratina",
-      image: "https://assets.tcgdex.net/en/swsh/swsh11/186/high.webp",
-    },
-    {
-      name: "Lugia",
-      image: "https://assets.tcgdex.net/en/swsh/swsh12/186/high.webp",
-    },
-    { name: "Mewtwo", query: "Mewtwo" },
-  ];
+    'swsh11-186', 'swsh12-186', 'me6-138', 'me6-141', 'me6-136', 'me6-114', 'me6-105',
+  ].map((id) => window.TCGDemo?.findCard('pokemon', id)).filter(Boolean);
   const banner = document.createElement("section");
   banner.className = "pokemon-intro-banner";
   banner.setAttribute("aria-label", "Pokémon featured banner");
@@ -26,6 +18,8 @@ if (new URLSearchParams(location.search).get("game") === "pokemon") {
     const image = featuredCard.querySelector(".pokemon-banner-card__face--front img");
     image.src = card.image || "./assets/pokemon-card-background.png";
     image.alt = card.name;
+    const params = new URLSearchParams({ game: card.game, id: card.id, name: card.name, set: card.set, image: card.image || '' });
+    featuredCard.href = `./card.html?${params}`;
   };
   const setCardContent = (card) => {
     setCardImage(card);
@@ -129,24 +123,6 @@ if (new URLSearchParams(location.search).get("game") === "pokemon") {
     }, 4000);
   };
   scheduleNextCard();
-
-  const delayedSource = featuredSources.find((source) => source.query);
-  if (delayedSource) {
-    fetch(`https://api.tcgdex.net/v2/en/cards?name=${encodeURIComponent(delayedSource.query)}`)
-      .then((response) => (response.ok ? response.json() : []))
-      .then((cards) => cards[0])
-      .then((card) =>
-        card
-          ? fetch(`https://api.tcgdex.net/v2/en/cards/${encodeURIComponent(card.id)}`).then(
-              (response) => (response.ok ? response.json() : card),
-            )
-          : null,
-      )
-      .then((card) => {
-        if (card?.image) featuredCards.push({ name: delayedSource.name, image: `${card.image}/high.webp` });
-      })
-      .catch(() => {});
-  }
 
   const link = document.createElement("link");
   link.rel = "stylesheet";

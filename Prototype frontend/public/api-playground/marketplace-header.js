@@ -3,8 +3,12 @@
   document.documentElement.dataset.marketplaceHeaderReady = "true";
   const stylesheet = document.createElement("link");
   stylesheet.rel = "stylesheet";
-  stylesheet.href = "./marketplace-header.css";
+  stylesheet.href = "./marketplace-header.css?v=2";
   document.head.append(stylesheet);
+  const mobileStylesheet = document.createElement("link");
+  mobileStylesheet.rel = "stylesheet";
+  mobileStylesheet.href = "./mobile-marketplace.css?v=3";
+  document.head.append(mobileStylesheet);
 
   document.querySelector('link[rel="icon"]')?.remove();
   const favicon = document.createElement("link");
@@ -144,7 +148,7 @@
           card.kind === "set"
             ? `Set · ${card.set}`
             : `${card.set} · ${card.game === "yugioh" ? "Yu-Gi-Oh!" : "Pokémon"}`;
-        option.addEventListener("mousedown", (event) => {
+        option.addEventListener("pointerdown", (event) => {
           event.preventDefault();
           openMatch(card);
         });
@@ -382,6 +386,58 @@
   gameMenu.append(switcher, options);
   if (navigation) navigation.before(gameMenu);
   else brandArea.append(gameMenu);
+
+  const actionArea = headerBar?.lastElementChild;
+  const accountMenu = actionArea?.querySelector('.market-account-menu');
+  const mobileMenuButton = document.createElement('button');
+  mobileMenuButton.type = 'button';
+  mobileMenuButton.className = 'market-mobile-menu-toggle';
+  mobileMenuButton.setAttribute('aria-label', 'Open navigation menu');
+  mobileMenuButton.setAttribute('aria-expanded', 'false');
+  mobileMenuButton.setAttribute('aria-controls', 'market-mobile-navigation');
+  mobileMenuButton.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">menu</span>';
+  if (accountMenu) actionArea.insertBefore(mobileMenuButton, accountMenu);
+  else actionArea?.append(mobileMenuButton);
+
+  const mobileNavigation = document.createElement('nav');
+  mobileNavigation.id = 'market-mobile-navigation';
+  mobileNavigation.className = 'market-mobile-navigation';
+  mobileNavigation.setAttribute('aria-label', 'Main navigation');
+  mobileNavigation.hidden = true;
+  const gameQuery = `?game=${encodeURIComponent(selectedGame)}`;
+  [
+    ['Marketplace', `./index.html${gameQuery}`, 'storefront'],
+    ['Search cards', `./search.html${gameQuery}`, 'search'],
+    ['Sell a card', `./sell.html${gameQuery}`, 'sell'],
+    ['Shopping cart', `./cart.html${gameQuery}`, 'shopping_bag'],
+    ['Wantlist', `./profile.html${gameQuery}`, 'bookmark'],
+  ].forEach(([label, href, icon]) => {
+    const link = document.createElement('a');
+    link.className = 'market-mobile-navigation__link';
+    link.href = href;
+    link.innerHTML = `<span class="material-symbols-outlined" aria-hidden="true">${icon}</span><span>${label}</span>`;
+    mobileNavigation.append(link);
+  });
+  header.append(mobileNavigation);
+  const closeMobileNavigation = () => {
+    mobileNavigation.hidden = true;
+    mobileMenuButton.setAttribute('aria-expanded', 'false');
+    mobileMenuButton.setAttribute('aria-label', 'Open navigation menu');
+    mobileMenuButton.firstElementChild.textContent = 'menu';
+  };
+  mobileMenuButton.addEventListener('click', () => {
+    const open = mobileNavigation.hidden;
+    mobileNavigation.hidden = !open;
+    mobileMenuButton.setAttribute('aria-expanded', String(open));
+    mobileMenuButton.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+    mobileMenuButton.firstElementChild.textContent = open ? 'close' : 'menu';
+  });
+  document.addEventListener('click', (event) => {
+    if (!mobileNavigation.contains(event.target) && !mobileMenuButton.contains(event.target)) closeMobileNavigation();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMobileNavigation();
+  });
 
   const marketHeading = [...document.querySelectorAll("h2")].find((heading) =>
     heading.textContent.includes("Trending Cards"),

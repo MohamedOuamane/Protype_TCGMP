@@ -107,7 +107,7 @@
     }
 
     cart.forEach((item, index) => {
-      const row = make('div', 'bg-surface-container-lowest p-space-md rounded-lg flex flex-wrap sm:flex-nowrap items-center gap-space-md');
+      const row = make('div', 'market-cart-item bg-surface-container-lowest p-space-md rounded-lg flex flex-wrap sm:flex-nowrap items-center gap-space-md');
       const image = make('img', 'w-14 h-20 object-contain bg-white rounded shrink-0');
       image.src = item.image || item.fallback || '';
       image.alt = `${item.name} card`;

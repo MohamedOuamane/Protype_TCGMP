@@ -1,0 +1,137 @@
+body { overflow-x: hidden; }
+button, a, select, input { touch-action: manipulation; }
+
+.market-mobile-menu-toggle,
+.market-mobile-navigation { display: none; }
+
+@media (max-width: 1023px) {
+  .market-mobile-menu-toggle {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    place-items: center;
+    border: 1px solid #ffffff1c;
+    border-radius: 6px;
+    background: #ffffff08;
+    color: #e7e8ec;
+    cursor: pointer;
+  }
+
+  .market-mobile-menu-toggle .material-symbols-outlined { font-size: 21px; }
+
+  .market-mobile-navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 80;
+    width: 100%;
+    max-height: calc(100dvh - 112px);
+    overflow-y: auto;
+    padding: 10px 14px max(14px, env(safe-area-inset-bottom));
+    border-top: 1px solid #ffffff14;
+    border-bottom: 1px solid #ffffff20;
+    background: #0b0c10f5;
+    box-shadow: 0 18px 30px #0009;
+    backdrop-filter: blur(16px);
+  }
+
+  .market-mobile-navigation:not([hidden]) { display: grid; gap: 5px; }
+
+  .market-mobile-navigation__link {
+    display: flex;
+    min-height: 48px;
+    align-items: center;
+    gap: 12px;
+    padding: 0 13px;
+    border-radius: 6px;
+    color: #e7e8ec;
+    font: 600 14px/1.2 "Space Grotesk", sans-serif;
+    text-decoration: none;
+  }
+
+  .market-mobile-navigation__link:hover,
+  .market-mobile-navigation__link:focus-visible { background: #ffffff12; outline: none; }
+  .market-mobile-navigation__link .material-symbols-outlined { color: #adc6ff; font-size: 20px; }
+}
+
+@media (max-width: 700px) {
+  .px-margin-desktop { padding-left: 16px !important; padding-right: 16px !important; }
+  .market-search-row { padding-left: 12px; padding-right: 12px; }
+
+  .market-offer-filters { position: relative !important; top: auto !important; }
+  .market-offer-filters > div { gap: 10px; }
+  .market-offer-filters > div > div:first-child { max-width: 100%; padding-bottom: 2px; }
+  .market-offer-filters button { min-height: 40px; }
+  .market-offer-filters select,
+  .market-offer-filters input { min-height: 40px; font-size: 12px !important; }
+
+  .market-offers-table { min-width: 0 !important; }
+  .market-offers-table thead { display: none; }
+  .market-offers-table tbody { display: grid; gap: 10px; padding: 10px; }
+  .market-offers-table tbody tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px 12px;
+    padding: 12px;
+    border: 1px solid #ffffff1a;
+    border-radius: 8px;
+    background: #111319;
+  }
+  .market-offers-table tbody td {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    padding: 4px 2px;
+    color: #d6d8e0;
+    font-size: 12px;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  .market-offers-table tbody td::before {
+    content: attr(data-label);
+    color: #9296a3;
+    font: 500 9px/1.25 "JetBrains Mono", monospace;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  .market-offers-table tbody td[data-label="Seller"] { grid-column: 1 / -1; }
+  .market-offers-table tbody td[data-label="Seller"]::before { content: none; }
+  .market-offers-table tbody td[data-label="Price + shipping"] { grid-column: 1; }
+  .market-offers-table tbody td[data-label="Action"] { grid-column: 2; align-items: stretch; }
+  .market-offers-table tbody td[data-label="Action"]::before { content: ""; }
+  .market-offers-table tbody td[data-label="Action"] button { width: 100%; min-height: 42px; justify-content: center; white-space: nowrap; }
+  .market-offers-table tbody td[data-label="Price + shipping"] div:first-child { font-size: 15px; font-weight: 700; }
+  body.game-pokemon .market-offers-table tbody tr { border-color: #d9dce3; background: #fff; }
+  body.game-pokemon .market-offers-table tbody td { color: #242631; }
+  body.game-pokemon .market-offers-table tbody td::before { color: #777b87; }
+  body.game-pokemon main [data-demo-sticky-cart] [data-demo-sticky-summary],
+  body.game-pokemon main [data-demo-sticky-cart] [data-demo-sticky-total] { color: #f2f3f7 !important; }
+  body.game-pokemon main [data-demo-sticky-cart] .text-outline { color: #aeb3c0 !important; }
+
+  [data-demo-sticky-cart] { bottom: max(8px, env(safe-area-inset-bottom)) !important; padding-left: 10px !important; padding-right: 10px !important; }
+  [data-demo-sticky-cart] > div { gap: 8px !important; padding: 10px !important; }
+  [data-demo-sticky-cart] [data-demo-sticky-summary] { max-width: 170px; font-size: 11px; }
+  [data-demo-sticky-cart] > div > div:first-child > div:last-child > p:nth-child(2) { display: none; }
+  [data-demo-sticky-cart] button { min-height: 42px; padding-left: 12px !important; padding-right: 12px !important; font-size: 10px; }
+  [data-demo-sticky-cart] [data-demo-sticky-total] { font-size: 15px; }
+
+  .pay-method-btn { min-height: 48px; }
+  .market-cart-item button { min-width: 44px; min-height: 44px; }
+  #pay-submit-btn { min-height: 50px; font-size: 14px; }
+  footer .grid { column-gap: 18px; row-gap: 22px; }
+}
+
+@media (max-width: 390px) {
+  .marketplace-logo-link img { width: 104px !important; }
+  .market-mobile-menu-toggle { width: 40px; height: 40px; flex-basis: 40px; }
+  header [aria-label="Notifications"] { display: none !important; }
+  .game-switcher__label { white-space: nowrap; }
+  header [data-path="cart"] .absolute { right: 0 !important; }
+  header > div:first-child { gap: 8px !important; padding-left: 10px !important; padding-right: 10px !important; }
+  header > div:first-child > div:first-child { gap: 8px !important; }
+  .game-switcher { padding-left: 4px; padding-right: 4px; }
+  [data-demo-sticky-cart] [data-demo-sticky-summary] { max-width: 135px; }
+}
