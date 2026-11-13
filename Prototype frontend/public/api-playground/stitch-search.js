@@ -34,10 +34,16 @@
     const sets = await yugiohSetsRequest;
     return sets.filter(set => set.set_name.toLowerCase().includes(query.trim().toLowerCase()));
   };
-  const resultCard = (card) => `<a class="group flex gap-space-md bg-surface-container-low rounded-lg p-space-md border border-white/5 hover:border-primary/50 transition-colors" href="./card.html?game=${card.game}&id=${encodeURIComponent(card.id)}">
-    <div class="w-20 h-28 shrink-0 bg-surface-container-lowest rounded p-1"><img src="${esc(card.image)}" alt="${esc(card.name)}" class="w-full h-full object-contain" loading="lazy"></div>
-    <div class="min-w-0 flex-1 py-1"><span class="font-label-mono text-label-mono uppercase text-primary">${card.game === 'pokemon' ? 'Pokémon' : 'Yu-Gi-Oh!'}</span><h3 class="font-headline-md text-headline-md text-on-surface mt-1 truncate">${esc(card.name)}</h3><p class="text-body-sm text-on-surface-variant mt-1 truncate">${esc(card.set)}</p><p class="font-label-mono text-label-mono text-outline mt-4">ID · ${esc(card.id)}</p></div><span class="material-symbols-outlined text-on-surface-variant self-center">arrow_forward</span>
+  const resultCard = (card) => {
+    const offers = window.TCGDemo?.offersFor(card) || [];
+    const lowest = offers[0];
+    const image = card.image || card.fallback || (card.game === 'pokemon' ? './assets/pokemon-card-background.png' : './assets/stardust-dragon-back.png');
+    const url = `./card.html?game=${card.game}&id=${encodeURIComponent(card.id)}&name=${encodeURIComponent(card.name)}&set=${encodeURIComponent(card.set || '')}&image=${encodeURIComponent(card.image || '')}`;
+    return `<a class="group flex gap-space-md bg-surface-container-low rounded-lg p-space-md border border-white/5 hover:border-primary/50 transition-colors" href="${url}">
+    <div class="w-20 h-28 shrink-0 bg-surface-container-lowest rounded p-1"><img src="${esc(image)}" onerror="this.onerror=null;this.src='${card.game === 'pokemon' ? './assets/pokemon-card-background.png' : './assets/stardust-dragon-back.png'}'" alt="${esc(card.name)}" class="w-full h-full object-contain" loading="lazy"></div>
+    <div class="min-w-0 flex-1 py-1"><span class="font-label-mono text-label-mono uppercase text-primary">${card.game === 'pokemon' ? 'Pokémon' : 'Yu-Gi-Oh!'}</span><h3 class="font-headline-md text-headline-md text-on-surface mt-1 truncate">${esc(card.name)}</h3><p class="text-body-sm text-on-surface-variant mt-1 truncate">${esc(card.set)}</p><p class="font-label-mono text-label-mono text-outline mt-3">${lowest ? `DEMO OFFERS · ${offers.length} sellers · from €${lowest.price.toFixed(2)}` : `ID · ${esc(card.id)}`}</p></div><span class="material-symbols-outlined text-on-surface-variant self-center">arrow_forward</span>
   </a>`;
+  };
   const resultSet = (set) => `<a class="group flex gap-space-md bg-surface-container-low rounded-lg p-space-md border border-white/5 hover:border-primary/50 transition-colors" href="./search.html?game=yugioh&set=${encodeURIComponent(set.set_name)}"><div class="w-20 h-28 shrink-0 bg-surface-container-lowest rounded p-1"><img src="${esc(set.set_image || '')}" alt="${esc(set.set_name)}" class="w-full h-full object-contain" loading="lazy"></div><div class="min-w-0 flex-1 py-1"><span class="font-label-mono text-label-mono uppercase text-primary">Yu-Gi-Oh! set</span><h3 class="font-headline-md text-headline-md text-on-surface mt-1 truncate">${esc(set.set_name)}</h3><p class="text-body-sm text-on-surface-variant mt-1 truncate">${esc(set.set_code)} · ${esc(set.num_of_cards)} cards</p><p class="font-label-mono text-label-mono text-outline mt-4">Released ${esc(set.tcg_date || 'date unavailable')}</p></div><span class="material-symbols-outlined text-on-surface-variant self-center">arrow_forward</span></a>`;
   const resultPokemonSet = (set) => `<a class="group flex gap-space-md bg-surface-container-low rounded-lg p-space-md border border-white/5 hover:border-primary/50 transition-colors" href="./search.html?game=pokemon&set=${encodeURIComponent(set.id)}"><div class="w-20 h-28 shrink-0 bg-surface-container-lowest rounded p-1"><img src="${esc(set.logo ? `${set.logo}.webp` : set.symbol ? `${set.symbol}.webp` : './assets/pokemon-card-background.png')}" alt="${esc(set.name)} logo" class="w-full h-full object-contain" loading="lazy"></div><div class="min-w-0 flex-1 py-1"><span class="font-label-mono text-label-mono uppercase text-primary">Pokémon set</span><h3 class="font-headline-md text-headline-md text-on-surface mt-1 truncate">${esc(set.name)}</h3><p class="text-body-sm text-on-surface-variant mt-1 truncate">${esc(set.cardCount?.official || set.cardCount?.total || '—')} cards</p><p class="font-label-mono text-label-mono text-outline mt-4">Set ID · ${esc(set.id)}</p></div><span class="material-symbols-outlined text-on-surface-variant self-center">arrow_forward</span></a>`;
   const main = [...document.querySelectorAll('main')].find(el => el.className.includes('lg:col-span-9'));
@@ -74,7 +80,16 @@
     if (state.game !== 'pokemon') jobs.push(searchYugioh(value));
     if (headerSearchMode !== 'card' && state.game !== 'pokemon') jobs.push(searchYugiohSets(value));
     const groups = await Promise.allSettled(jobs);
-    const matches = groups.flatMap(result => result.status === 'fulfilled' ? result.value : []);
+    const liveCards = groups.flatMap(result => result.status === 'fulfilled' ? result.value : []);
+    const demoCards = window.TCGDemo?.searchCards(value, state.game) || [];
+    const seen = new Set();
+    const cards = [...demoCards, ...liveCards].filter((card) => {
+      const key = `${card.game}:${card.id}`;
+      if (card.set_name || seen.has(key)) return Boolean(card.set_name);
+      seen.add(key);
+      return true;
+    });
+    const matches = cards;
     state.results = [...matches.filter(item => item.set_name), ...matches.filter(item => !item.set_name)];
     render(`Results for “${esc(value)}”`);
     return state.results;

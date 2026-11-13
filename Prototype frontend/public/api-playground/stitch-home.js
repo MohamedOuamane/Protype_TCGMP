@@ -94,32 +94,16 @@
         }
       : null;
   };
-  const save = (card) => {
-    let cart = [];
-    try {
-      cart = JSON.parse(localStorage.getItem("cardcart-cart-v1")) || [];
-    } catch (_) {}
-    const found = cart.find(
-      (item) => item.game === card.game && item.id === card.id,
-    );
-    if (found) found.quantity = (Number(found.quantity) || 1) + 1;
-    else
-      cart.push({
-        ...card,
-        quantity: 1,
-        price: 0,
-        condition: "Source card",
-        seller: "Live API",
-      });
-    localStorage.setItem("cardcart-cart-v1", JSON.stringify(cart));
-    window.location.href = "./cart.html";
-  };
   const product = (
     card,
-  ) => `<article class="group bg-surface-container-low rounded-lg overflow-hidden border border-white/5 transition hover:border-primary/50">
-    <a href="./card.html?game=${card.game}&id=${encodeURIComponent(card.id)}" class="block aspect-[3/4] bg-surface-container-lowest p-4"><img src="${card.image}" alt="${card.name}" class="w-full h-full object-contain group-hover:scale-[1.03] transition-transform" loading="lazy"></a>
-    <div class="p-space-md"><p class="font-label-mono text-label-mono text-primary uppercase">${card.game === "pokemon" ? "Pokémon" : "Yu-Gi-Oh!"}</p><a href="./card.html?game=${card.game}&id=${encodeURIComponent(card.id)}" class="block mt-1 font-headline-md text-headline-md text-on-surface truncate">${card.name}</a><p class="mt-1 text-body-sm text-on-surface-variant truncate">${card.set}</p><div class="mt-4 flex items-center justify-between gap-2"><span class="font-label-mono text-label-mono text-outline">${card.cardmarketPrice ? `Cardmarket · €${card.cardmarketPrice}` : "LIVE CATALOG"}</span><button class="save-card px-3 py-1.5 rounded bg-primary text-on-primary font-label-mono text-label-mono" type="button">View offers</button></div></div>
+  ) => {
+    const offer = window.TCGDemo?.offersFor(card)?.[0];
+    const offerUrl = `./card.html?game=${card.game}&id=${encodeURIComponent(card.id)}&name=${encodeURIComponent(card.name)}&set=${encodeURIComponent(card.set || '')}&image=${encodeURIComponent(card.image || '')}`;
+    return `<article class="group bg-surface-container-low rounded-lg overflow-hidden border border-white/5 transition hover:border-primary/50">
+    <a href="${offerUrl}" class="block aspect-[3/4] bg-surface-container-lowest p-4"><img src="${card.image || (card.game === 'pokemon' ? './assets/pokemon-card-background.png' : './assets/stardust-dragon-back.png')}" onerror="this.onerror=null;this.src='${card.game === 'pokemon' ? './assets/pokemon-card-background.png' : './assets/stardust-dragon-back.png'}'" alt="${card.name}" class="w-full h-full object-contain group-hover:scale-[1.03] transition-transform" loading="lazy"></a>
+    <div class="p-space-md"><p class="font-label-mono text-label-mono text-primary uppercase">${card.game === "pokemon" ? "Pokémon" : "Yu-Gi-Oh!"}</p><a href="${offerUrl}" class="block mt-1 font-headline-md text-headline-md text-on-surface truncate">${card.name}</a><p class="mt-1 text-body-sm text-on-surface-variant truncate">${card.set}</p><div class="mt-4 flex items-center justify-between gap-2"><span class="font-label-mono text-label-mono text-outline">${offer ? `From €${offer.price.toFixed(2)}` : 'Demo offers'}</span><a href="${offerUrl}" class="save-card px-3 py-1.5 rounded bg-primary text-on-primary font-label-mono text-label-mono">View offers →</a></div></div>
   </article>`;
+  };
   const loadingProduct = (
     selectedGame,
   ) => `<article class="overflow-hidden rounded-lg border border-white/5 bg-surface-container-low">
@@ -164,9 +148,8 @@
     grid.className =
       "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-lg";
     grid.style.gap = "1.25rem";
-    grid.innerHTML = Array.from({ length: 5 }, () =>
-      loadingProduct("yugioh"),
-    ).join("");
+    const demoCards = window.TCGDemo?.catalog.filter((card) => card.game === 'yugioh') || [];
+    grid.innerHTML = demoCards.slice(0, 5).map(product).join("") || Array.from({ length: 5 }, () => loadingProduct("yugioh")).join("");
     Promise.allSettled([
       yugiohCard("44508094"),
       yugiohCard("76666602"),
@@ -179,7 +162,7 @@
         .map((result) => result.value);
       grid.innerHTML = available.length
         ? available.map(product).join("")
-        : '<p class="col-span-full text-on-surface-variant">The Yu-Gi-Oh! catalogue is temporarily unavailable. Try again shortly.</p>';
+        : demoCards.slice(0, 5).map(product).join("");
     });
     return;
   }
@@ -187,9 +170,8 @@
     grid.className =
       "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-lg";
     grid.style.gap = "1.25rem";
-    grid.innerHTML = Array.from({ length: 5 }, () =>
-      loadingProduct("pokemon"),
-    ).join("");
+    const demoCards = window.TCGDemo?.catalog.filter((card) => card.game === 'pokemon') || [];
+    grid.innerHTML = demoCards.slice(0, 5).map(product).join("") || Array.from({ length: 5 }, () => loadingProduct("pokemon")).join("");
     Promise.allSettled([
       pokemon("Giratina"),
       pokemon("Pikachu"),
@@ -202,10 +184,12 @@
         .map((result) => result.value);
       grid.innerHTML = available.length
         ? available.map(product).join("")
-        : '<p class="col-span-full text-on-surface-variant">The Pokémon catalogue is temporarily unavailable. Try again shortly.</p>';
+        : demoCards.slice(0, 5).map(product).join("");
     });
     return;
   }
+  const demoCards = window.TCGDemo?.catalog || [];
+  grid.innerHTML = demoCards.slice(0, 4).map(product).join("");
   Promise.all([
     pokemon("Charizard"),
     pokemon("Pikachu"),
@@ -214,21 +198,9 @@
   ])
     .then((cards) => {
       const available = cards.filter(Boolean);
-      grid.innerHTML = available.length
-        ? available.map(product).join("")
-        : '<p class="col-span-full text-on-surface-variant">The catalogues are temporarily unavailable. Try search again shortly.</p>';
-      grid
-        .querySelectorAll(".save-card")
-        .forEach((button, index) =>
-          button.addEventListener(
-            "click",
-            () =>
-              (window.location.href = `./card.html?game=${available[index].game}&id=${encodeURIComponent(available[index].id)}`),
-          ),
-        );
+      grid.innerHTML = available.length ? available.map(product).join("") : demoCards.slice(0, 4).map(product).join("");
     })
     .catch(() => {
-      grid.innerHTML =
-        '<p class="col-span-full text-on-surface-variant">Could not load the live catalogue right now.</p>';
+      grid.innerHTML = demoCards.slice(0, 4).map(product).join("");
     });
 })();

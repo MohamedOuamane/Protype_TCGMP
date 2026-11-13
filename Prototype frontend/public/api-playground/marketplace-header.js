@@ -127,7 +127,7 @@
       window.location.href =
         match.kind === "set"
           ? `./search.html?game=${match.game}&set=${encodeURIComponent(match.game === "pokemon" ? match.id : match.name)}`
-          : `./card.html?game=${match.game}&id=${encodeURIComponent(match.id)}`;
+          : `./card.html?game=${match.game}&id=${encodeURIComponent(match.id)}&name=${encodeURIComponent(match.name)}&set=${encodeURIComponent(match.set || '')}&image=${encodeURIComponent(match.image || '')}`;
     };
     const drawSuggestions = () => {
       suggestions.replaceChildren();
@@ -209,16 +209,28 @@
                 game: "pokemon",
               })),
             );
-      return request;
+      const fixtures = window.TCGDemo?.searchCards(query, isYugioh ? 'yugioh' : 'pokemon').map((card) => ({
+        kind: 'card', id: card.id, name: card.name, set: card.set, game: card.game,
+        image: card.image, fallback: card.fallback, demo: true,
+      })) || [];
+      return request.catch(() => []).then((liveCards) => {
+        const seen = new Set();
+        return [...fixtures, ...liveCards].filter((card) => {
+          const key = `${card.game}:${card.id}`;
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        });
+      });
     };
     const findMatches = async (query) => {
       const currentRequest = ++requestNumber;
-      const groups = await Promise.all([
+      const groups = await Promise.allSettled([
         searchMode !== "card" ? findSetMatches(query) : [],
         searchMode !== "set" ? findCardMatches(query) : [],
       ]);
       if (currentRequest !== requestNumber) return;
-      matches = groups.flat();
+      matches = groups.flatMap((result) => result.status === "fulfilled" ? result.value : []);
       selectedIndex = -1;
       drawSuggestions();
     };

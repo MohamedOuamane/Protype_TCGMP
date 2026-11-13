@@ -9,6 +9,7 @@ import './legacy/welcome-cards.css';
 import './legacy/welcome-title.css';
 
 const homeScripts = [
+  'demo-market.js',
   'home-game-theme.js', 'yugioh-banner.js', 'pokemon-banner.js',
   'dragon-card-tilt.js', 'marketplace-header.js', 'stitch-nav.js', 'stitch-home.js',
 ];
