@@ -1,0 +1,15 @@
+.ygo-intro-banner__panel .dragon-card-demo {
+  cursor: pointer;
+}
+.ygo-intro-banner__panel .dragon-card-demo__shine {
+  opacity: 0;
+  background:
+    linear-gradient(108deg, transparent 27%, #ffffff12 40%, #ffffff9c 50%, #b7e2ff3d 60%, transparent 73%),
+    radial-gradient(circle at var(--shine-x, 50%) var(--shine-y, 50%), #ffffff50 0, #ffffff12 15%, transparent 44%);
+  background-size: 180% 100%, 100% 100%;
+  background-position: var(--shine-x, 50%) 50%, center;
+  mix-blend-mode: screen;
+}
+.ygo-intro-banner__panel .dragon-card-demo:is(:hover, :focus-visible) .dragon-card-demo__shine {
+  opacity: 0.88;
+}

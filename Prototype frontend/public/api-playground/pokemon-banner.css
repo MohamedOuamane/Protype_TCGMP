@@ -1,0 +1,202 @@
+.pokemon-intro-banner {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 38px;
+  align-items: center;
+  min-height: 500px;
+  padding: 72px clamp(40px, 8vw, 130px);
+  background: url("./assets/pokemon-champions.jpg") center/cover;
+  position: relative;
+  isolation: isolate;
+}
+.pokemon-intro-banner::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: rgb(125 125 125 / 20%);
+}
+.pokemon-intro-banner__copy,
+.pokemon-intro-banner__cards {
+  position: relative;
+  z-index: 1;
+}
+.pokemon-intro-banner__copy p {
+  margin: 0 0 14px;
+  color: #ffc26b;
+  font: 600 10px "JetBrains Mono";
+  letter-spacing: 0.1em;
+}
+.pokemon-intro-banner__copy h2 {
+  margin: 0;
+  color: #fff;
+  font: 700 clamp(38px, 4.6vw, 64px)/0.95 "Space Grotesk";
+  letter-spacing: -0.06em;
+}
+.pokemon-intro-banner__copy h2 em {
+  color: #ffcf79;
+  font-style: normal;
+}
+.pokemon-intro-banner__copy span {
+  display: block;
+  max-width: 390px;
+  margin-top: 18px;
+  color: #f1d8d8;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.pokemon-intro-banner__cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 370px;
+  transform: translateX(clamp(12px, 2.4vw, 38px));
+}
+.pokemon-banner-card-wrap {
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  width: clamp(190px, 22vw, 300px);
+}
+.pokemon-banner-card {
+  position: relative;
+  width: 100%;
+  perspective: 1200px;
+  text-decoration: none;
+  animation: pokemon-card-float 3.8s ease-in-out infinite;
+}
+.pokemon-banner-card__transformer {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 2.5 / 3.5;
+  transform: rotateX(var(--tilt-x, -2deg)) rotateY(var(--tilt-y, 4deg));
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  transition: filter 0.3s ease;
+  will-change: transform;
+}
+.pokemon-banner-card__transformer::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 3px;
+  border-radius: 7px;
+  background: linear-gradient(90deg, #071426, #365477 48%, #071426);
+  transform: translateZ(-3px);
+}
+.pokemon-banner-card__face {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  border: 1px solid #ffffff4d;
+  border-radius: 7px;
+  backface-visibility: hidden;
+  background: #1d1216;
+  box-shadow: 0 22px 38px #000a, 0 0 0 10px #ffffff0a;
+}
+.pokemon-banner-card__face--back {
+  transform: rotateY(180deg) translateZ(3px);
+}
+.pokemon-banner-card__face--front {
+  transform: translateZ(3px);
+}
+.pokemon-banner-card__face img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+.pokemon-banner-card:hover .pokemon-banner-card__face--front img { filter: brightness(1.08); }
+.pokemon-banner-card__face--back img {
+  object-fit: cover;
+}
+.pokemon-banner-card__shine {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  border-radius: 7px;
+  background: radial-gradient(circle at var(--shine-x, 35%) var(--shine-y, 20%), #ffffff52 0, #ffffff12 14%, transparent 44%);
+  pointer-events: none;
+  transform: translateZ(1px);
+}
+.pokemon-banner-card__name {
+  display: block;
+  min-width: 0;
+  color: #fff;
+  font: 700 11px/1 "Space Grotesk";
+  letter-spacing: 0.03em;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.pokemon-banner-card.is-swapping {
+  pointer-events: none;
+}
+.pokemon-banner-card.is-swapping .pokemon-banner-card__transformer {
+  /* The JavaScript supplies every animation frame; a CSS transition here
+     delays the rendered angle and can expose the artwork swap. */
+  transition: none;
+}
+.pokemon-banner-card.is-swapping .pokemon-banner-card__shine,
+.pokemon-banner-card:hover:not(.is-swapping) .pokemon-banner-card__shine {
+  opacity: var(--turn-glow, 0.45);
+  background:
+    linear-gradient(108deg, transparent 27%, #ffffff14 40%, #ffffffa8 50%, #b7e2ff42 60%, transparent 73%),
+    radial-gradient(circle at var(--shine-x, 35%) var(--shine-y, 20%), #ffffff52 0, #ffffff12 14%, transparent 44%);
+  background-size: 180% 100%, 100% 100%;
+  background-position: var(--turn-light-x, 50%) 50%, center;
+  mix-blend-mode: screen;
+}
+@keyframes pokemon-card-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -12px; }
+}
+.pokemon-banner-card__controls {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 38px;
+  width: 100%;
+  min-height: 40px;
+  align-items: center;
+  border: 1px solid #ffffff5c;
+  border-radius: 11px;
+  background: #17171bd9;
+  box-shadow: 0 12px 24px #0005;
+  backdrop-filter: blur(10px);
+}
+.pokemon-banner-card__nav {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+.pokemon-banner-card__nav .material-symbols-outlined { font-size: 21px; }
+.pokemon-banner-card__nav:hover { background: #ef5350; color: #fff; }
+.pokemon-banner-card__nav--previous { border-radius: 10px 0 0 10px; }
+.pokemon-banner-card__nav--next { border-radius: 0 10px 10px 0; }
+.pokemon-banner-card__nav:focus-visible { position: relative; z-index: 1; outline: 2px solid #fff; outline-offset: -3px; }
+@media (prefers-reduced-motion: reduce) {
+  .pokemon-banner-card { animation: none; }
+}
+@media (max-width: 720px) {
+  .pokemon-intro-banner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    min-height: 0;
+    padding: 42px 24px;
+  }
+  .pokemon-intro-banner__cards {
+    min-height: 290px;
+    justify-content: center;
+    transform: none;
+  }
+  .pokemon-banner-card-wrap {
+    width: min(62vw, 250px);
+  }
+}

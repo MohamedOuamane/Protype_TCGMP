@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Settings — TCG Marketplace</title>
+    <link rel="icon" href="./assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              surface: "#111319",
+              "surface-container": "#1d2026",
+              "surface-container-low": "#191b22",
+              "surface-container-lowest": "#0c0e14",
+              "surface-container-high": "#272a30",
+              "on-surface": "#e1e2eb",
+              "on-surface-variant": "#c2c6d5",
+              outline: "#8c909e",
+              primary: "#adc6ff",
+              "on-primary": "#002e6a",
+            },
+            spacing: {
+              "margin-desktop": "2.5rem",
+              "space-xs": "0.25rem",
+              "space-2xs": "0.125rem",
+              "space-sm": "0.5rem",
+              "space-md": "0.75rem",
+              "space-lg": "1rem",
+            },
+            fontFamily: {
+              "body-md": ["Geist"],
+              "body-sm": ["Geist"],
+              "headline-md": ["Space Grotesk"],
+              "label-mono": ["JetBrains Mono"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./profile.css" />
+    <link rel="stylesheet" href="./settings.css" />
+  </head>
+  <body class="profile-page settings-page">
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md"
+      style="border-bottom: 1px solid rgb(26, 28, 36)"
+    >
+      <div
+        class="h-16 w-full px-margin-desktop flex items-center justify-between gap-space-lg"
+      >
+        <div class="flex items-center gap-space-xl">
+          <a
+            class="flex items-center gap-space-sm"
+            data-path="marketplace"
+            href="./index.html"
+            ><img
+              class="h-8 w-auto object-contain"
+              src="./assets/tcg-marketplace-logo.png"
+              alt="TCG Marketplace"
+            /><span class="font-headline-md tracking-tight text-on-surface"
+              >TCG Marketplace</span
+            ></a
+          >
+          <nav class="hidden lg:flex items-center gap-space-xs">
+            <a
+              data-path="marketplace"
+              href="./index.html"
+              class="px-space-md py-space-xs rounded text-on-surface-variant"
+              >Marketplace</a
+            ><a
+              data-path="expansions"
+              href="./search.html"
+              class="px-space-md py-space-xs rounded text-on-surface-variant"
+              >Expansions</a
+            ><a
+              data-path="sell"
+              href="./sell.html"
+              class="px-space-md py-space-xs rounded text-on-surface-variant"
+              >Sell</a
+            >
+          </nav>
+        </div>
+        <div class="flex-1 max-w-xl hidden md:block">
+          <div class="relative flex items-center">
+            <span
+              class="material-symbols-outlined absolute left-space-md text-outline pointer-events-none text-[18px]"
+              >search</span
+            ><input
+              class="w-full bg-surface-container-lowest rounded py-space-xs pl-10 pr-space-md text-on-surface placeholder:text-outline focus:outline-none"
+              placeholder="Search cards, sets, or card IDs…"
+              type="search"
+            />
+          </div>
+        </div>
+        <div class="flex items-center gap-space-md">
+          <a
+            class="text-on-surface-variant hover:text-on-surface p-space-xs rounded flex"
+            data-path="wantlist"
+            href="#notifications"
+            ><span class="material-symbols-outlined text-[20px]"
+              >notifications</span
+            ></a
+          ><a
+            class="text-on-surface-variant hover:text-on-surface p-space-xs rounded relative flex"
+            data-path="cart"
+            href="./cart.html"
+            ><span class="material-symbols-outlined text-[20px]"
+              >shopping_bag</span
+            ></a
+          ><a
+            class="flex items-center ml-space-xs"
+            data-path="user-profile"
+            href="./profile.html"
+            ><span class="profile-avatar">MC</span></a
+          >
+        </div>
+      </div>
+    </header>
+    <main class="settings-main">
+      <section class="settings-hero">
+        <div>
+          <p>ACCOUNT CONTROL</p>
+          <h1>Settings</h1>
+          <span
+            >Manage your marketplace account, seller setup, and notification
+            preferences.</span
+          >
+        </div>
+        <a class="settings-back" href="./profile.html"
+          ><span class="material-symbols-outlined">arrow_back</span>Back to
+          profile</a
+        >
+      </section>
+      <div class="settings-layout">
+        <nav
+          class="settings-tabs"
+          role="tablist"
+          aria-label="Settings sections"
+        >
+          <button
+            role="tab"
+            aria-selected="true"
+            aria-controls="settings-account"
+            data-settings-tab="account"
+          >
+            <span class="material-symbols-outlined">person</span
+            ><span><b>Account</b><small>Profile and preferences</small></span>
+          </button>
+          <button
+            role="tab"
+            aria-selected="false"
+            aria-controls="settings-seller"
+            data-settings-tab="seller"
+          >
+            <span class="material-symbols-outlined">storefront</span
+            ><span><b>Seller setup</b><small>Listings and payouts</small></span>
+          </button>
+          <button
+            role="tab"
+            aria-selected="false"
+            aria-controls="settings-notifications"
+            data-settings-tab="notifications"
+          >
+            <span class="material-symbols-outlined">notifications</span
+            ><span
+              ><b>Notifications</b><small>Orders and sales updates</small></span
+            >
+          </button>
+          <button
+            role="tab"
+            aria-selected="false"
+            aria-controls="settings-security"
+            data-settings-tab="security"
+          >
+            <span class="material-symbols-outlined">shield</span
+            ><span><b>Security</b><small>Account protection</small></span>
+          </button>
+        </nav>
+        <section
+          class="settings-panel"
+          id="settings-account"
+          role="tabpanel"
+          data-settings-panel
+        >
+          <div class="settings-panel__heading">
+            <p>ACCOUNT</p>
+            <h2>Profile preferences</h2>
+            <span>These demo preferences are saved only in this browser.</span>
+          </div>
+          <form id="account-settings-form" class="settings-form">
+            <label
+              >Display name<input
+                id="display-name"
+                value="Mohamed C."
+                autocomplete="name" /></label
+            ><label
+              >Marketplace focus<select id="marketplace-focus">
+                <option>Pokémon &amp; Yu-Gi-Oh!</option>
+                <option>Pokémon TCG</option>
+                <option>Yu-Gi-Oh!</option>
+              </select></label
+            ><button>Save preferences</button
+            ><output id="account-settings-note" aria-live="polite"></output>
+          </form>
+        </section>
+        <section
+          class="settings-panel"
+          id="settings-seller"
+          role="tabpanel"
+          data-settings-panel
+          hidden
+        >
+          <div class="settings-panel__heading">
+            <p>SELLER SETUP</p>
+            <h2>Listing and payout settings</h2>
+            <span
+              >Set expectations for buyers before you publish your first
+              listing.</span
+            >
+          </div>
+          <form id="seller-settings-form" class="settings-form">
+            <label
+              >Display shop name<input
+                id="shop-name"
+                value="Mohamed's Card Shop" /></label
+            ><label
+              >Default handling time<select>
+                <option>Ships within 2 business days</option>
+                <option>Ships within 1 business day</option>
+                <option>Ships within 3 business days</option>
+              </select></label
+            ><button>Save seller settings</button
+            ><output id="seller-settings-note" aria-live="polite"></output>
+          </form>
+          <div class="settings-payout">
+            <div>
+              <span class="material-symbols-outlined">account_balance</span>
+              <div><b>Payout account</b><small>Not configured</small></div>
+            </div>
+            <p>
+              Demo placeholder only. Real payout information is never collected
+              on this prototype.
+            </p>
+            <button type="button" disabled>Payout setup coming soon</button>
+          </div>
+        </section>
+        <section
+          class="settings-panel"
+          id="settings-notifications"
+          role="tabpanel"
+          data-settings-panel
+          hidden
+        >
+          <div class="settings-panel__heading">
+            <p>NOTIFICATIONS</p>
+            <h2>Keep the right updates</h2>
+            <span>Choose which marketplace activity should reach you.</span>
+          </div>
+          <form
+            id="notification-settings-form"
+            class="settings-form settings-form--rows"
+          >
+            <label class="setting-toggle"
+              ><span
+                ><b>Order updates</b
+                ><small>When an order is placed or changes status.</small></span
+              ><input type="checkbox" checked /><i
+                aria-hidden="true"
+              ></i></label
+            ><label class="setting-toggle"
+              ><span
+                ><b>Sales activity</b
+                ><small
+                  >When a buyer makes an offer or purchases a listing.</small
+                ></span
+              ><input type="checkbox" checked /><i
+                aria-hidden="true"
+              ></i></label
+            ><label class="setting-toggle"
+              ><span
+                ><b>Marketplace news</b
+                ><small>Product announcements and occasional tips.</small></span
+              ><input type="checkbox" /><i aria-hidden="true"></i></label
+            ><button>Save notifications</button
+            ><output
+              id="notification-settings-note"
+              aria-live="polite"
+            ></output>
+          </form>
+        </section>
+        <section
+          class="settings-panel"
+          id="settings-security"
+          role="tabpanel"
+          data-settings-panel
+          hidden
+        >
+          <div class="settings-panel__heading">
+            <p>SECURITY</p>
+            <h2>Protect your account</h2>
+            <span
+              >Security controls will be connected when authentication is
+              added.</span
+            >
+          </div>
+          <div class="security-row">
+            <div>
+              <span class="material-symbols-outlined">key</span>
+              <div>
+                <b>Password</b
+                ><small>Sign-in is not enabled in this prototype.</small>
+              </div>
+            </div>
+            <button type="button" disabled>Change password</button>
+          </div>
+          <div class="security-row">
+            <div>
+              <span class="material-symbols-outlined">devices</span>
+              <div>
+                <b>Active sessions</b
+                ><small>You are using this browser session.</small>
+              </div>
+            </div>
+            <button type="button" disabled>Review sessions</button>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="./marketplace-header.js"></script>
+    <script src="./stitch-nav.js"></script>
+    <script src="./settings.js"></script>
+  </body>
+</html>

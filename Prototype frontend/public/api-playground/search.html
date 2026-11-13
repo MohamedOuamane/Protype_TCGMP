@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>TCG Market</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"outline":"#8c909e","on-primary-fixed-variant":"#004495","primary-fixed":"#d8e2ff","on-error-container":"#ffdad6","on-primary-container":"#dee6ff","on-tertiary":"#532200","on-background":"#e1e2eb","error-container":"#93000a","surface-dim":"#111319","on-tertiary-fixed":"#331200","surface":"#111319","surface-container-high":"#272a30","outline-variant":"#424753","secondary-fixed":"#e2e2e2","primary-container":"#2164c8","on-primary-fixed":"#001a42","tertiary-container":"#a94c00","tertiary-fixed":"#ffdbc9","primary":"#adc6ff","on-tertiary-fixed-variant":"#763300","background":"#111319","surface-tint":"#adc6ff","inverse-primary":"#0e5bbe","secondary-container":"#474747","on-surface":"#e1e2eb","on-secondary-fixed-variant":"#474747","secondary-fixed-dim":"#c6c6c6","on-error":"#690005","surface-container-low":"#191b22","surface-bright":"#373940","on-secondary-fixed":"#1b1b1b","on-primary":"#002e6a","tertiary-fixed-dim":"#ffb68d","secondary":"#c6c6c6","surface-container":"#1d2026","surface-variant":"#32353b","surface-container-lowest":"#0c0e14","on-secondary":"#303030","primary-fixed-dim":"#adc6ff","surface-container-highest":"#32353b","on-surface-variant":"#c2c6d5","inverse-on-surface":"#2e3037","error":"#ffb4ab","on-secondary-container":"#b5b5b5","tertiary":"#ffb68d","on-tertiary-container":"#ffe1d2","inverse-surface":"#e1e2eb"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xl":"1.5rem","margin-tablet":"1.5rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","margin-desktop":"2.5rem","gutter":"1rem","margin":"1rem","space-2xl":"2.5rem","space-2xs":"0.125rem","space-lg":"1rem","space-sm":"0.5rem","space-md":"0.75rem"},fontFamily:{"headline-lg-mobile":["Space Grotesk"],"body-sm":["Geist"],"headline-xl":["Space Grotesk"],"body-md":["Geist"],"label-caps":["Space Grotesk"],"metric-display":["JetBrains Mono"],"headline-lg":["Space Grotesk"],"label-mono":["JetBrains Mono"],"headline-xl-mobile":["Space Grotesk"],"body-lg":["Geist"],"metric-mono":["JetBrains Mono"],"headline-md":["Space Grotesk"],"metric-large":["JetBrains Mono"]},fontSize:{"headline-lg-mobile":["24px",{"lineHeight":"30px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-xl":["48px",{"lineHeight":"52px","letterSpacing":"-0.03em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"700"}],"metric-display":["28px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-mono":["10px",{"lineHeight":"12px","letterSpacing":"0.05em","fontWeight":"500"}],"headline-xl-mobile":["32px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"metric-mono":["13px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-md":["20px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"600"}],"metric-large":["18px",{"lineHeight":"22px","fontWeight":"600"}]}}}}</script></head><body><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-md"><div class="h-16 w-full px-margin-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-xl"><a class="flex items-center gap-space-sm" data-path="marketplace" href="#"><img alt="Brand logo. - Primary color: #4ade80
+- Font: spaceGrotesk
+- Mode: dark
+- Roundness: rounded-lg
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X505dF34neO8rFLq4Yvlfs9DigeYvOOdj7uW5ZyC0pipjEne-AgQbcthpXL11vWIIANgn-tEB0r9F0qyCiHJc9SWL37g0qLl3B_vl2mB4vtdUFkY387kbkyddn7hvV1MKbI4NipG6XBOHI-3Zg5N1fi2mFeEiDCH2atXrskPeNYZcv6BrW69gSPEc-KYcVO8g-wzHp6lwEHhHYiZMedS4PrC33vLvCmB0CWom-XZggtw0PH_fP6Qdi7gjI"/><span class="font-headline-md text-headline-md tracking-tight text-on-surface">TCG Market</span></a><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-on-surface font-semibold"><a class="px-space-md py-space-xs rounded text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="marketplace" href="#">Marketplace</a><a aria-current="page" class="px-space-md py-space-xs rounded transition-colors bg-surface-container-high text-on-surface font-semibold" data-path="expansions" href="#">Expansions</a><a class="px-space-md py-space-xs rounded text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="sell" href="#">Sell</a></nav></div><div class="flex-1 max-w-xl hidden md:block"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-outline pointer-events-none text-[18px]">search</span><input class="w-full bg-surface-container-lowest rounded py-space-xs pl-10 pr-space-md font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-low transition-colors" placeholder="Search cards, expansions..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs font-label-mono text-label-mono text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer px-space-xs py-space-2xs rounded hover:bg-surface-container"><span class="material-symbols-outlined text-[16px]">language</span><span class="">EUR / EN</span></div><a class="text-on-surface-variant hover:text-on-surface transition-colors p-space-xs rounded hover:bg-surface-container flex items-center justify-center" data-path="wantlist" href="#"><span class="material-symbols-outlined text-[20px]">bookmark</span></a><a class="text-on-surface-variant hover:text-on-surface transition-colors p-space-xs rounded hover:bg-surface-container relative flex items-center justify-center" data-path="cart" href="#"><span class="material-symbols-outlined text-[20px]">shopping_bag</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary"></span></a><a class="flex items-center ml-space-xs" data-path="user-profile" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Xm-leqZTax0uiSH2rgPyLTgQ-IT2iFhtvPplPZnpOGNQ_Vx4r2ZnMcvRNOvpmf_2Tqk6OQlKcQoqMTFuDg_50RIXZgkTBXwRPzHxI3AzbW48279JqVesUBDa_FbJnS0wPZekBW2zyFWlTGYzJW5Cul0ShNK_q-SRmnGV48eRSJymJ2aLxfHaR3ihnlTwTwz5ZbEooDhKKLUcfl58AuWs7keT0l0aKnd0Nl-fzF00ExRcvqVMhhqpHBvk-7"/></a></div></div></header><main class="w-full pt-16 bg-surface-container-lowest min-h-[calc(100vh-16rem)]"><div class="flex flex-col w-full">
+<div class="w-full px-margin-desktop py-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg mb-space-2xl pb-space-lg">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<p class="font-label-mono text-label-mono text-outline uppercase tracking-widest">Marketplace Index // Global Stock</p>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Browse Cards</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">Find singles across Pokémon, MTG, Yu-Gi-Oh! and more.</p>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-low p-space-xs rounded">
+<span class="font-label-mono text-label-mono text-outline px-space-xs uppercase">Sort by:</span>
+<div class="inline-flex rounded overflow-hidden">
+<button class="px-space-md py-space-xs font-label-mono text-label-mono bg-surface-container-high text-primary font-semibold transition-colors">Most Available</button>
+<button class="px-space-md py-space-xs font-label-mono text-label-mono text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">Lowest Price</button>
+<button class="px-space-md py-space-xs font-label-mono text-label-mono text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">Name A-Z</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<aside class="lg:col-span-3 space-y-space-xl bg-surface-container-low p-space-lg rounded">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface">Filters</span>
+<button class="font-label-mono text-label-mono text-outline hover:text-primary transition-colors uppercase" id="reset-filters">Reset All</button>
+</div>
+<div class="space-y-space-sm">
+<label class="block font-label-caps text-label-caps text-outline uppercase">Game / Franchise</label>
+<div class="space-y-space-2xs font-body-sm text-body-sm">
+<label class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface">
+<span class="flex items-center gap-space-sm">
+<input checked="" class="w-3.5 h-3.5 rounded-none bg-surface-container-lowest text-primary accent-primary-container cursor-pointer" type="checkbox"/>
+<span class="">Pokémon</span>
+</span>
+<span class="font-label-mono text-label-mono text-outline">14,290</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface-variant hover:text-on-surface">
+<span class="flex items-center gap-space-sm">
+<input class="w-3.5 h-3.5 rounded-none bg-surface-container-lowest text-primary accent-primary-container cursor-pointer" type="checkbox"/>
+<span class="">Magic: The Gathering</span>
+</span>
+<span class="font-label-mono text-label-mono text-outline">38,104</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface-variant hover:text-on-surface">
+<span class="flex items-center gap-space-sm">
+<input class="w-3.5 h-3.5 rounded-none bg-surface-container-lowest text-primary accent-primary-container cursor-pointer" type="checkbox"/>
+<span class="">Yu-Gi-Oh!</span>
+</span>
+<span class="font-label-mono text-label-mono text-outline">19,832</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface-variant hover:text-on-surface">
+<span class="flex items-center gap-space-sm">
+<input class="w-3.5 h-3.5 rounded-none bg-surface-container-lowest text-primary accent-primary-container cursor-pointer" type="checkbox"/>
+<span class="">One Piece Card Game</span>
+</span>
+<span class="font-label-mono text-label-mono text-outline">5,110</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface-variant hover:text-on-surface">
+<span class="flex items-center gap-space-sm">
+<input class="w-3.5 h-3.5 rounded-none bg-surface-container-lowest text-primary accent-primary-container cursor-pointer" type="checkbox"/>
+<span class="">Disney Lorcana</span>
+</span>
+<span class="font-label-mono text-label-mono text-outline">3,420</span>
+</label>
+</div>
+</div>
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<label class="font-label-caps text-label-caps text-outline uppercase">Expansions</label>
+<span class="font-label-mono text-label-mono text-primary">Pokémon</span>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-2 top-2 text-[14px] text-outline pointer-events-none">search</span>
+<input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-outline font-body-sm text-body-sm pl-7 pr-2 py-1.5 rounded focus:outline-none focus:bg-surface-container" placeholder="Filter sets..." type="text"/>
+</div>
+<div class="space-y-space-2xs max-h-40 overflow-y-auto pr-1 font-body-sm text-body-sm">
+<label class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface">
+<span class="flex items-center gap-space-sm">
+<input checked="" class="w-3.5 h-3.5 rounded-none bg-surface-container-lowest text-primary accent-primary-container cursor-pointer" type="checkbox"/>
+<span class="">Base Set (1999)</span>
+</span>
+<span class="font-label-mono text-label-mono text-outline">102</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface-variant hover:text-on-surface">
+<span class="flex items-center gap-space-sm">
+<input class="w-3.5 h-3.5 rounded-none bg-surface-container-lowest text-primary accent-primary-container cursor-pointer" type="checkbox"/>
+<span class="">Jungle</span>
+</span>
+<span class="font-label-mono text-label-mono text-outline">64</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface-variant hover:text-on-surface">
+<span class="flex items-center gap-space-sm">
+<input class="w-3.5 h-3.5 rounded-none bg-surface-container-lowest text-primary accent-primary-container cursor-pointer" type="checkbox"/>
+<span class="">Fossil</span>
+</span>
+<span class="font-label-mono text-label-mono text-outline">62</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface-variant hover:text-on-surface">
+<span class="flex items-center gap-space-sm">
+<input class="w-3.5 h-3.5 rounded-none bg-surface-container-lowest text-primary accent-primary-container cursor-pointer" type="checkbox"/>
+<span class="">Team Rocket</span>
+</span>
+<span class="font-label-mono text-label-mono text-outline">83</span>
+</label>
+<label class="flex items-center justify-between p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface-variant hover:text-on-surface">
+<span class="flex items-center gap-space-sm">
+<input class="w-3.5 h-3.5 rounded-none bg-surface-container-lowest text-primary accent-primary-container cursor-pointer" type="checkbox"/>
+<span class="">Neo Genesis</span>
+</span>
+<span class="font-label-mono text-label-mono text-outline">111</span>
+</label>
+</div>
+</div>
+<div class="space-y-space-sm">
+<label class="block font-label-caps text-label-caps text-outline uppercase">Rarity</label>
+<div class="grid grid-cols-1 gap-space-2xs font-body-sm text-body-sm">
+<label class="flex items-center gap-space-sm p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface">
+<input checked="" class="w-3.5 h-3.5 rounded-none bg-surface-container-lowest text-primary accent-primary-container cursor-pointer" type="checkbox"/>
+<span class="">Holo Rare</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface-variant hover:text-on-surface">
+<input class="w-3.5 h-3.5 rounded-none bg-surface-container-lowest text-primary accent-primary-container cursor-pointer" type="checkbox"/>
+<span class="">Secret Rare</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface-variant hover:text-on-surface">
+<input class="w-3.5 h-3.5 rounded-none bg-surface-container-lowest text-primary accent-primary-container cursor-pointer" type="checkbox"/>
+<span class="">Rare</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface-variant hover:text-on-surface">
+<input class="w-3.5 h-3.5 rounded-none bg-surface-container-lowest text-primary accent-primary-container cursor-pointer" type="checkbox"/>
+<span class="">Uncommon</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface-variant hover:text-on-surface">
+<input class="w-3.5 h-3.5 rounded-none bg-surface-container-lowest text-primary accent-primary-container cursor-pointer" type="checkbox"/>
+<span class="">Common</span>
+</label>
+</div>
+</div>
+<div class="space-y-space-sm">
+<label class="block font-label-caps text-label-caps text-outline uppercase">Min Condition</label>
+<div class="flex flex-wrap gap-1">
+<button class="px-2 py-1 rounded bg-surface-container-high text-primary font-label-mono text-label-mono">Near Mint</button>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono text-label-mono">Mint</button>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono text-label-mono">Light Played</button>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono text-label-mono">Played</button>
+<button class="px-2 py-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface font-label-mono text-label-mono">Poor</button>
+</div>
+</div>
+<div class="space-y-space-sm">
+<label class="block font-label-caps text-label-caps text-outline uppercase">Price Range ($)</label>
+<div class="flex items-center gap-space-sm">
+<div class="flex-1 bg-surface-container-lowest rounded px-space-sm py-space-xs flex items-center">
+<span class="font-label-mono text-label-mono text-outline mr-1">$</span>
+<input class="w-full bg-transparent text-on-surface font-metric-mono text-metric-mono focus:outline-none" placeholder="Min" type="number" value="10"/>
+</div>
+<span class="font-label-mono text-label-mono text-outline">to</span>
+<div class="flex-1 bg-surface-container-lowest rounded px-space-sm py-space-xs flex items-center">
+<span class="font-label-mono text-label-mono text-outline mr-1">$</span>
+<input class="w-full bg-transparent text-on-surface font-metric-mono text-metric-mono focus:outline-none" placeholder="Max" type="number" value="5000"/>
+</div>
+</div>
+<button class="w-full py-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface rounded font-label-mono text-label-mono transition-colors uppercase">Apply Range</button>
+</div>
+<div class="space-y-space-sm">
+<label class="block font-label-caps text-label-caps text-outline uppercase">Ships From</label>
+<div class="space-y-space-2xs font-body-sm text-body-sm">
+<label class="flex items-center gap-space-sm p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface">
+<input checked="" class="w-3.5 h-3.5 text-primary accent-primary-container cursor-pointer" name="shipping" type="radio"/>
+<span class="">Domestic (US)</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface-variant hover:text-on-surface">
+<input class="w-3.5 h-3.5 text-primary accent-primary-container cursor-pointer" name="shipping" type="radio"/>
+<span class="">European Union</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface-variant hover:text-on-surface">
+<input class="w-3.5 h-3.5 text-primary accent-primary-container cursor-pointer" name="shipping" type="radio"/>
+<span class="">Worldwide</span>
+</label>
+</div>
+</div>
+<div class="space-y-space-sm">
+<label class="block font-label-caps text-label-caps text-outline uppercase">Seller Type</label>
+<div class="space-y-space-2xs font-body-sm text-body-sm">
+<label class="flex items-center gap-space-sm p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface">
+<input checked="" class="w-3.5 h-3.5 text-primary accent-primary-container cursor-pointer" name="seller_tier" type="radio"/>
+<span class="">All Sellers</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface-variant hover:text-on-surface">
+<input class="w-3.5 h-3.5 text-primary accent-primary-container cursor-pointer" name="seller_tier" type="radio"/>
+<span class="">Professional Only</span>
+</label>
+<label class="flex items-center gap-space-sm p-space-xs rounded hover:bg-surface-container cursor-pointer text-on-surface-variant hover:text-on-surface">
+<input class="w-3.5 h-3.5 text-primary accent-primary-container cursor-pointer" name="seller_tier" type="radio"/>
+<span class="">Verified Private</span>
+</label>
+</div>
+</div>
+</aside>
+<main class="lg:col-span-9 flex flex-col space-y-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-low p-space-sm rounded">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-label-mono text-label-mono text-outline uppercase px-space-xs">Active:</span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-surface-container-high font-label-mono text-label-mono text-primary">
+              Pokémon
+              <button class="hover:text-on-surface material-symbols-outlined text-[12px]">close</button>
+</span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-surface-container-high font-label-mono text-label-mono text-primary">
+              Base Set
+              <button class="hover:text-on-surface material-symbols-outlined text-[12px]">close</button>
+</span>
+<span class="inline-flex items-center gap-1 px-space-sm py-0.5 rounded bg-surface-container-high font-label-mono text-label-mono text-primary">
+              Holo Rare
+              <button class="hover:text-on-surface material-symbols-outlined text-[12px]">close</button>
+</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-label-mono text-label-mono text-outline">Showing <span class="text-on-surface font-semibold">1-8</span> of 96 singles</span>
+<button class="font-label-mono text-label-mono text-primary hover:underline uppercase">Clear all</button>
+</div>
+</div>
+<div class="space-y-space-xs">
+<div class="group flex flex-col sm:flex-row sm:items-center justify-between p-space-sm bg-surface-container-low hover:bg-surface-container transition-colors rounded gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-14 h-20 bg-surface-container-lowest rounded overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="A clean, direct macro studio scan of a holographic Charizard Pokémon card in a clear ultra-pro casing with vibrant orange flame holographic foil refractions, sharp corners, pristine mint surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoBJVp71mLBVZQ6BXcasrj_qX62oyR973sL251mEBEYurb0sk2haPmGWXRKvnc-7INBKnMw3e2MiaZQl1VpeyXT_lKHWV844xvLIBctJ9ynK8XgGRgyCES11hxVaGVUV2vG2YyNDG8mYClEcloMHQ8zFin7acD4uGm97piOz_CF0qfIHaCX9qBZk7x3k0pL0_5Q7zCZ_mI6XKbQT5FZ5EddoWP6auzFxyJAzHMyds0pmWwNKa5kNzAvw"/>
+</div>
+<div class="min-w-0 space-y-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-mono text-label-mono font-bold">#4/102</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-mono text-label-mono text-outline">HOLO RARE</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate group-hover:text-primary transition-colors">Charizard</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Base Set (1999) · 1st Edition Shadowless available</p>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-xl sm:text-right flex-shrink-0">
+<div class="space-y-0.5">
+<div class="font-label-mono text-label-mono text-outline uppercase">From</div>
+<div class="font-metric-display text-metric-display text-on-surface">$295.00</div>
+<div class="font-label-mono text-label-mono text-outline">128 offers available</div>
+</div>
+<a class="px-space-md py-space-sm bg-primary text-on-primary font-label-mono text-label-mono font-bold rounded hover:bg-surface-tint transition-colors flex items-center gap-1" href="#">
+<span class="">View Offers</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="group flex flex-col sm:flex-row sm:items-center justify-between p-space-sm bg-surface-container-low hover:bg-surface-container transition-colors rounded gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-14 h-20 bg-surface-container-lowest rounded overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Direct high resolution catalog scan of a Blastoise trading card, holographic cobalt blue shell, crisp edges, subtle holographic cosmic star pattern visible, technical dark lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLDBAS3lnVtBmeKnFOLnkrFavjwLfQkrl2SK9MVk0K9Fcn03e1ZGpq1jM33y6phdTqsM1qcNKfHyA02lWVaXTy-BV_MWNiqqJiq_Svp8y8CzfHGb9vW4X2eAVe9TLRiy88BIAPUc4foX6KOxwW1R2puN-hJhbLeXZf008PAMCrlsRy2RE0vLfhhVLudwn2dtQlswsiZYP7aLNrk-A3X1zvjdy4JlajeO-cpdBixUJu-UzV8kgt6VQelg"/>
+</div>
+<div class="min-w-0 space-y-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-mono text-label-mono font-bold">#2/102</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-mono text-label-mono text-outline">HOLO RARE</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate group-hover:text-primary transition-colors">Blastoise</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Base Set (1999) · Unlimited &amp; Shadowless</p>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-xl sm:text-right flex-shrink-0">
+<div class="space-y-0.5">
+<div class="font-label-mono text-label-mono text-outline uppercase">From</div>
+<div class="font-metric-display text-metric-display text-on-surface">$82.50</div>
+<div class="font-label-mono text-label-mono text-outline">82 offers available</div>
+</div>
+<a class="px-space-md py-space-sm bg-surface-container-high text-on-surface font-label-mono text-label-mono font-bold rounded hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-1" href="#">
+<span class="">View Offers</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="group flex flex-col sm:flex-row sm:items-center justify-between p-space-sm bg-surface-container-low hover:bg-surface-container transition-colors rounded gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-14 h-20 bg-surface-container-lowest rounded overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="High quality top-down scan of Venusaur Base Set card, vibrant green plant details and glowing solar beam background in holographic foil finish, flat studio illumination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKb1-QkMRsUftBZXBcF6Fnj-vgnoQOQinDiR0rYFo2x6ebrKGpVMI18IJAcbgGygMw87O7N0e3VzZ0eWrTc9OR3D-jnpcSjw1zrOApTa0mWE1ypPxkH2dhd0Pnd3mUnPDXYO-OocxChGlUzC0Q21ZBizyh8QN6zt1i1V2jWYOqfq6hoBSyS9RAYyO0whmGmmehDpfa97N6r_t8iNZsi2XKSTB21tAbAM6HAFq0RkhSumfywMjK_tX1AQ"/>
+</div>
+<div class="min-w-0 space-y-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-mono text-label-mono font-bold">#15/102</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-mono text-label-mono text-outline">HOLO RARE</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate group-hover:text-primary transition-colors">Venusaur</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Base Set (1999) · Unlimited print</p>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-xl sm:text-right flex-shrink-0">
+<div class="space-y-0.5">
+<div class="font-label-mono text-label-mono text-outline uppercase">From</div>
+<div class="font-metric-display text-metric-display text-on-surface">$59.00</div>
+<div class="font-label-mono text-label-mono text-outline">94 offers available</div>
+</div>
+<a class="px-space-md py-space-sm bg-surface-container-high text-on-surface font-label-mono text-label-mono font-bold rounded hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-1" href="#">
+<span class="">View Offers</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="group flex flex-col sm:flex-row sm:items-center justify-between p-space-sm bg-surface-container-low hover:bg-surface-container transition-colors rounded gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-14 h-20 bg-surface-container-lowest rounded overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Macro card flatbed scan of an Alakazam vintage card holding metallic silver spoons with violet psychic background reflection, deep contrast, ultra clean edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYz6etejqU1BJk5yd8qc_mdr84OGZZbNi2B8eqDkKzDIjXX55gSH3eq--Rd4-sCGjTHK_ky04t8s1X6CfLRMSd7tsCFUXGdGuBR5jiL_j7JugqvIzGES-u-ZuMTYljR_jp_Gbo7sEhfLgPXQoDgFe9jFmwoMcgGUWyf-00aDXhHT3vM0siVfomYnKQFZMXO4xD4p5BAZ-IBirmI5CgzGnMvIBSIIV4mxVbOuHRx3B-EQvPWyzqpNg5WQ"/>
+</div>
+<div class="min-w-0 space-y-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-mono text-label-mono font-bold">#1/102</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-mono text-label-mono text-outline">HOLO RARE</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate group-hover:text-primary transition-colors">Alakazam</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Base Set (1999) · English Edition</p>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-xl sm:text-right flex-shrink-0">
+<div class="space-y-0.5">
+<div class="font-label-mono text-label-mono text-outline uppercase">From</div>
+<div class="font-metric-display text-metric-display text-on-surface">$34.90</div>
+<div class="font-label-mono text-label-mono text-outline">61 offers available</div>
+</div>
+<a class="px-space-md py-space-sm bg-surface-container-high text-on-surface font-label-mono text-label-mono font-bold rounded hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-1" href="#">
+<span class="">View Offers</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="group flex flex-col sm:flex-row sm:items-center justify-between p-space-sm bg-surface-container-low hover:bg-surface-container transition-colors rounded gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-14 h-20 bg-surface-container-lowest rounded overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Top down photo scan of a Mewtwo base set collectible trading card, psychic energy glow artwork, perfect centering, dark obsidian background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrKkDuodS3MZHHKNkOJbFX9FskSTBvnvtQE7kGnP12I64q1lnSOIERMXANWJQZaJkOBiNxQANNTN1JpjrBbvxzWoFYgAHAKGVsqvl3PWzx34TSBetcjCXYI9i6UvBbOmZhTzbwBCHx7EF00N-xdxemBKhok0TZmRuUyM8hhA0tKaCcNIDscwONWfrUb9a9sjFOuehyKoywXYxhUSotbosGrvZ6K2R_tY__sL5murB8s6gITJQ80Y0Ymg"/>
+</div>
+<div class="min-w-0 space-y-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-mono text-label-mono font-bold">#10/102</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-mono text-label-mono text-outline">HOLO RARE</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate group-hover:text-primary transition-colors">Mewtwo</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Base Set (1999) · Unlimited</p>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-xl sm:text-right flex-shrink-0">
+<div class="space-y-0.5">
+<div class="font-label-mono text-label-mono text-outline uppercase">From</div>
+<div class="font-metric-display text-metric-display text-on-surface">$41.00</div>
+<div class="font-label-mono text-label-mono text-outline">103 offers available</div>
+</div>
+<a class="px-space-md py-space-sm bg-surface-container-high text-on-surface font-label-mono text-label-mono font-bold rounded hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-1" href="#">
+<span class="">View Offers</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="group flex flex-col sm:flex-row sm:items-center justify-between p-space-sm bg-surface-container-low hover:bg-surface-container transition-colors rounded gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-14 h-20 bg-surface-container-lowest rounded overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Detailed flat catalog scan of Zapdos electric bird card from 1999 Base Set with sharp holographic thunderbolt details, crisp yellow border, clean dark grading mat background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBATn11OOmOvYrSnKovLq0qalHomPtUyUHFdQSqgm50TW9NujY8ojFt9mjIpc9ySqnJbIhfPSoQyqD7QAWso0VmOhGX0G4KE1_DGqCDyIpxMafbsFtyijGsjaZ_lyr2O8Kd16xtVXYBF63b7hWUBA5xf0UP9_bzB0yHrPm6c84f8pi7a_HQJcmPdxC2WmlcB3maqGY0xD-V2870tzSNsjMXwSz2cnTunaQEO6XTi2rLGutAzEeRY_fGhQ"/>
+</div>
+<div class="min-w-0 space-y-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-mono text-label-mono font-bold">#16/102</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-mono text-label-mono text-outline">HOLO RARE</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate group-hover:text-primary transition-colors">Zapdos</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Base Set (1999) · Evolution print</p>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-xl sm:text-right flex-shrink-0">
+<div class="space-y-0.5">
+<div class="font-label-mono text-label-mono text-outline uppercase">From</div>
+<div class="font-metric-display text-metric-display text-on-surface">$28.00</div>
+<div class="font-label-mono text-label-mono text-outline">77 offers available</div>
+</div>
+<a class="px-space-md py-space-sm bg-surface-container-high text-on-surface font-label-mono text-label-mono font-bold rounded hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-1" href="#">
+<span class="">View Offers</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="group flex flex-col sm:flex-row sm:items-center justify-between p-space-sm bg-surface-container-low hover:bg-surface-container transition-colors rounded gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-14 h-20 bg-surface-container-lowest rounded overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Technical scan of a vintage Gyarados card emerging from waves, vivid blue scales and holographic foaming water spray, pristine mint collectible condition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS5jDMpZ0K8FpmMA-x3-2TkNU736zvCaJQYgAWp_bOHTmr0tGxqJ-3LrUO7qY-gjlBW53Yp23oUCkURNvQ6T2xprF85o1w1xhS-_MAikdd7e83HlqpvqbgU9ElQXlrssKnWGw_mbKV-E3RUDoPVwMkRqcJ_wbTgd5gKrKdVQDmu5rUcqiOLfCnbE1DLU9zxr1hFlaYTeSbrDMhXqYP5lTMKiI9H6lrUr_hcmdYp_e-nNbWg_JuRCTxBg"/>
+</div>
+<div class="min-w-0 space-y-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-mono text-label-mono font-bold">#6/102</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-mono text-label-mono text-outline">HOLO RARE</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate group-hover:text-primary transition-colors">Gyarados</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Base Set (1999) · Unlimited Edition</p>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-xl sm:text-right flex-shrink-0">
+<div class="space-y-0.5">
+<div class="font-label-mono text-label-mono text-outline uppercase">From</div>
+<div class="font-metric-display text-metric-display text-on-surface">$22.00</div>
+<div class="font-label-mono text-label-mono text-outline">119 offers available</div>
+</div>
+<a class="px-space-md py-space-sm bg-surface-container-high text-on-surface font-label-mono text-label-mono font-bold rounded hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-1" href="#">
+<span class="">View Offers</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="group flex flex-col sm:flex-row sm:items-center justify-between p-space-sm bg-surface-container-low hover:bg-surface-container transition-colors rounded gap-space-md">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-14 h-20 bg-surface-container-lowest rounded overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="High precision flatbed scan of Machamp 1st Edition base set foil card, four muscular arms, pristine centering and radiant rainbow foil highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSkE7Uol3hhWYJpEeQyfnowF7c6EfaIpCYOg2aj8ZRSJA6vXncFDTaA8kC2JtpDRfM4MACE2u5yFg1D2inZSXFAeSvijMvkK9omyADtyrZ3XoXWB5D6Fqv47KeERlG-Y9Gsy-emoZW1MGAXcUsvFmsp1dzTcr06wV3v2QrIM1sm_DWXgwYR2SJqZUqyRhRZdP5JiyRNU3zOQ8TqyUlPfrjlajMFuyuYXCGGCZE6nXZs8V7YKNln92ImQ"/>
+</div>
+<div class="min-w-0 space-y-space-2xs">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface font-label-mono text-label-mono font-bold">#8/102</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high font-label-mono text-label-mono text-outline">HOLO RARE</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate group-hover:text-primary transition-colors">Machamp</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Base Set (1999) · 1st Edition Stamped</p>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-xl sm:text-right flex-shrink-0">
+<div class="space-y-0.5">
+<div class="font-label-mono text-label-mono text-outline uppercase">From</div>
+<div class="font-metric-display text-metric-display text-on-surface">$16.50</div>
+<div class="font-label-mono text-label-mono text-outline">154 offers available</div>
+</div>
+<a class="px-space-md py-space-sm bg-surface-container-high text-on-surface font-label-mono text-label-mono font-bold rounded hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-1" href="#">
+<span class="">View Offers</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-lg">
+<div class="font-label-mono text-label-mono text-outline">
+            Page <span class="text-on-surface font-semibold">1</span> of <span class="text-on-surface font-semibold">12</span> (96 total singles)
+          </div>
+<div class="flex items-center gap-space-2xs">
+<button class="px-space-sm py-space-xs rounded bg-surface-container-low text-outline font-label-mono text-label-mono cursor-not-allowed opacity-50 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">chevron_left</span>
+<span class="">Prev</span>
+</button>
+<button class="w-8 h-8 rounded bg-primary text-on-primary font-label-mono text-label-mono font-bold">1</button>
+<button class="w-8 h-8 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-mono text-label-mono transition-colors">2</button>
+<button class="w-8 h-8 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-mono text-label-mono transition-colors">3</button>
+<span class="w-8 h-8 flex items-center justify-center font-label-mono text-label-mono text-outline">...</span>
+<button class="w-8 h-8 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-mono text-label-mono transition-colors">12</button>
+<button class="px-space-sm py-space-xs rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-mono text-label-mono transition-colors flex items-center gap-1">
+<span class="">Next</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('aside button, .inline-flex button');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        if (btn.id === 'reset-filters') {
+          const checkboxes = document.querySelectorAll('aside input[type="checkbox"]');
+          checkboxes.forEach(cb => cb.checked = false);
+        }
+      });
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-lowest mt-space-2xl"><div class="w-full px-margin-desktop py-space-2xl"><div class="grid grid-cols-2 md:grid-cols-4 gap-space-xl mb-space-2xl"><div><h4 class="font-label-caps text-label-caps text-outline uppercase mb-space-md">Buy</h4><ul class="space-y-space-sm font-body-sm text-body-sm"><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="marketplace" href="#">Singles</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="expansions" href="#">Sets &amp; Boosters</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="cart" href="#">Shopping Cart</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="wantlist" href="#">Wantlist</a></li></ul></div><div><h4 class="font-label-caps text-label-caps text-outline uppercase mb-space-md">Sell</h4><ul class="space-y-space-sm font-body-sm text-body-sm"><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="sell" href="#">Start Selling</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="sell-guide" href="#">Grading Guide</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="fee-calculator" href="#">Fee Structure</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="bulk-upload" href="#">Bulk Sync</a></li></ul></div><div><h4 class="font-label-caps text-label-caps text-outline uppercase mb-space-md">About</h4><ul class="space-y-space-sm font-body-sm text-body-sm"><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">Platform</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="trust-safety" href="#">Buyer Protection</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="market-insights" href="#">Market Trends</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">Press &amp; Contact</a></li></ul></div><div><h4 class="font-label-caps text-label-caps text-outline uppercase mb-space-md">Help &amp; Rules</h4><ul class="space-y-space-sm font-body-sm text-body-sm"><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="help" href="#">Support Center</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="shipping-guidelines" href="#">Shipping Guidelines</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms" href="#">Terms of Service</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy" href="#">Privacy Policy</a></li></ul></div></div><div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-lg text-on-surface-variant font-label-mono text-label-mono"><p class="">© 2025 TCG Market. Independent peer-to-peer card marketplace.</p><p class="text-outline">All trademarks belong to their respective owners.</p></div></div></footer><script src="./stitch-nav.js?v=1"></script><script src="./stitch-search.js?v=1"></script></body></html>

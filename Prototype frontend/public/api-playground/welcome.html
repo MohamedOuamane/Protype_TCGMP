@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TCG Market — Choose your game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./welcome.css"><link rel="stylesheet" href="./welcome-images.css"><link rel="stylesheet" href="./welcome-layout.css"><link rel="stylesheet" href="./welcome-cards.css"><link rel="stylesheet" href="./welcome-title.css">
+</head>
+<body data-game="none">
+  <header class="app-header" hidden>
+    <a class="brand" href="#" aria-label="TCG Market home"><span>✦</span> TCG Market</a>
+    <div class="header-right"><span class="collection-label">Your collection</span><div class="switcher"><button id="switch-trigger" type="button" aria-expanded="false" aria-controls="switch-menu"><span class="game-dot"></span><span id="switch-label">Pokémon</span><b>⌄</b></button><div id="switch-menu" class="switch-menu" hidden><button type="button" data-game-choice="pokemon"><i>●</i> Pokémon</button><button type="button" data-game-choice="yugioh"><i>◇</i> Yu-Gi-Oh!</button></div></div></div>
+  </header>
+
+  <main>
+    <section class="welcome" id="welcome-screen" aria-labelledby="welcome-title">
+      <div class="ambient ambient-left"></div><div class="ambient ambient-right"></div>
+      <div class="welcome-inner">
+        <div class="intro"><p class="eyebrow">Interactive marketplace prototype</p><h1 id="welcome-title">Choose your <em>universe.</em></h1><p>Explore the card market, try the collection tools, and switch worlds whenever you want.</p></div>
+        <div class="choice-grid" role="group" aria-label="Choose your card game">
+          <button class="game-choice pokemon-choice" type="button" data-game-choice="pokemon" aria-label="Choose Pokémon"><span class="choice-art"><img class="game-logo pokemon-logo" src="./assets/pokemon-tcg-logo.webp" alt=""><span class="sparkle s-one">✦</span><span class="sparkle s-two">✦</span></span><span class="choice-copy"><span class="choice-index">01 · CARD UNIVERSE</span><strong>Pokémon</strong><small>Chase favourites, track prices, and build your collection.</small></span><span class="choice-arrow" aria-hidden="true">→</span></button>
+          <button class="game-choice yugioh-choice" type="button" data-game-choice="yugioh" aria-label="Choose Yu-Gi-Oh!"><span class="choice-art"><img class="game-logo yugioh-logo" src="./assets/yugioh-logo.svg" alt=""><span class="glyph g-one">𓂀</span><span class="glyph g-two">✧</span></span><span class="choice-copy"><span class="choice-index">02 · CARD UNIVERSE</span><strong>Yu-Gi-Oh!</strong><small>Explore iconic monsters, staples, and competitive finds.</small></span><span class="choice-arrow" aria-hidden="true">→</span></button>
+        </div>
+        <p class="choice-help">Hover a world to preview it · Your choice is saved on this device</p>
+      </div>
+    </section>
+
+    <section class="selected-view" id="selected-view" hidden aria-labelledby="selected-title">
+      <div class="selected-content"><p class="eyebrow" id="selected-eyebrow">Welcome to your Pokédex</p><h1 id="selected-title">Your next<br><em>great pull</em> awaits.</h1><p id="selected-description">Discover cards, follow prices, and build the Pokémon collection that feels like yours.</p><button class="enter-button" type="button">Explore the marketplace <span>↗</span></button></div>
+      <div class="selected-symbol" aria-hidden="true"><span id="symbol-main">●</span><i id="symbol-detail">✦</i></div>
+    </section>
+  </main>
+  <script src="./welcome.js"></script>
+</body>
+</html>

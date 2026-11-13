@@ -1,0 +1,329 @@
+.settings-main {
+  width: min(1180px, calc(100% - 40px));
+  margin: auto;
+  padding: 142px 0 80px;
+}
+.settings-hero {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.settings-hero p,
+.settings-panel__heading p {
+  margin: 0 0 8px;
+  color: var(--blue);
+  font: 600 10px "JetBrains Mono";
+  letter-spacing: 0.09em;
+}
+.settings-hero h1,
+.settings-panel h2 {
+  margin: 0;
+  color: #fff;
+  font-family: "Space Grotesk";
+  letter-spacing: -0.04em;
+}
+.settings-hero h1 {
+  font-size: 38px;
+}
+.settings-hero span,
+.settings-panel__heading > span {
+  display: block;
+  margin-top: 9px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.settings-back {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.settings-back .material-symbols-outlined {
+  font-size: 17px;
+}
+.settings-layout {
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+.settings-tabs {
+  display: grid;
+  gap: 7px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+.settings-tabs button {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  padding: 13px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+.settings-tabs button > .material-symbols-outlined {
+  font-size: 20px;
+}
+.settings-tabs button b,
+.settings-tabs button small {
+  display: block;
+}
+.settings-tabs button b {
+  color: #e8e9ee;
+  font: 600 13px "Space Grotesk";
+}
+.settings-tabs button small {
+  margin-top: 3px;
+  font-size: 11px;
+}
+.settings-tabs button[aria-selected="true"] {
+  border-color: color-mix(in srgb, var(--blue) 35%, transparent);
+  background: color-mix(in srgb, var(--blue) 12%, transparent);
+  color: var(--blue);
+}
+.settings-tabs button[aria-selected="true"] b {
+  color: var(--blue);
+}
+.settings-tabs button:hover {
+  background: #ffffff08;
+  color: #fff;
+}
+.settings-tabs button:focus {
+  outline: 0;
+}
+.settings-tabs button:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+.settings-panel {
+  min-height: 448px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+.settings-panel__heading {
+  margin-bottom: 25px;
+}
+.settings-panel h2 {
+  font-size: 25px;
+}
+.settings-form {
+  display: grid;
+  max-width: 560px;
+  gap: 18px;
+}
+.settings-form label:not(.setting-toggle) {
+  display: grid;
+  gap: 8px;
+  color: #e4e5ea;
+  font-size: 12px;
+  font-weight: 600;
+}
+.settings-form input:not([type="checkbox"]),
+.settings-form select {
+  height: 43px;
+  border: 1px solid #ffffff20;
+  border-radius: 6px;
+  background: var(--deep);
+  color: #fff;
+  padding: 0 12px;
+  font: 14px Geist;
+}
+.settings-form button {
+  width: max-content;
+  border: 0;
+  border-radius: 6px;
+  background: var(--blue);
+  color: var(--ink);
+  padding: 11px 14px;
+  font: 700 12px Geist;
+  cursor: pointer;
+}
+.settings-form output {
+  min-height: 16px;
+  color: #9dd5b1;
+  font-size: 12px;
+}
+.settings-payout {
+  max-width: 560px;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+.settings-payout > div,
+.security-row > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.settings-payout .material-symbols-outlined,
+.security-row .material-symbols-outlined {
+  color: var(--blue);
+  font-size: 21px;
+}
+.settings-payout b,
+.settings-payout small,
+.security-row b,
+.security-row small {
+  display: block;
+}
+.settings-payout b,
+.security-row b {
+  color: #f1f2f5;
+  font: 600 14px "Space Grotesk";
+}
+.settings-payout small,
+.security-row small {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.settings-payout p {
+  margin: 14px 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.settings-payout button,
+.security-row button {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  padding: 10px 12px;
+  font: 700 11px Geist;
+  cursor: not-allowed;
+}
+.settings-form--rows {
+  gap: 0;
+}
+.setting-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+.setting-toggle:last-of-type {
+  border-bottom: 0;
+}
+.setting-toggle b,
+.setting-toggle small {
+  display: block;
+}
+.setting-toggle b {
+  color: #f1f2f5;
+  font: 600 13px "Space Grotesk";
+}
+.setting-toggle small {
+  max-width: 380px;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.4;
+}
+.setting-toggle input {
+  position: absolute;
+  opacity: 0;
+}
+.setting-toggle i {
+  position: relative;
+  flex: 0 0 auto;
+  width: 38px;
+  height: 22px;
+  border-radius: 999px;
+  background: #ffffff20;
+  transition: background 0.18s ease;
+}
+.setting-toggle i:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.18s ease;
+}
+.setting-toggle input:checked + i {
+  background: var(--blue);
+}
+.setting-toggle input:checked + i:after {
+  transform: translateX(16px);
+}
+.security-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.security-row:last-child {
+  border-bottom: 0;
+}
+@media (max-width: 800px) {
+  .settings-layout {
+    grid-template-columns: 1fr;
+  }
+  .settings-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .settings-panel {
+    min-height: 0;
+  }
+}
+@media (max-width: 600px) {
+  .settings-main {
+    width: calc(100% - 24px);
+    padding-top: 112px;
+  }
+  .settings-hero {
+    align-items: start;
+    flex-direction: column;
+    margin-bottom: 22px;
+  }
+  .settings-hero h1 {
+    font-size: 32px;
+  }
+  .settings-tabs {
+    grid-template-columns: 1fr;
+  }
+  .settings-panel {
+    padding: 20px;
+  }
+  .settings-payout,
+  .settings-form {
+    max-width: none;
+  }
+  .security-row {
+    align-items: start;
+    flex-direction: column;
+  }
+  .security-row button {
+    margin-left: 31px;
+  }
+  .setting-toggle {
+    gap: 12px;
+  }
+}

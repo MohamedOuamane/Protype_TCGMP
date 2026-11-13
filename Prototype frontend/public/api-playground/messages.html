@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Messages — TCG Marketplace</title>
+    <link rel="icon" href="./assets/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              surface: "#111319",
+              "surface-container": "#1d2026",
+              "surface-container-low": "#191b22",
+              "surface-container-lowest": "#0c0e14",
+              "surface-container-high": "#272a30",
+              "on-surface": "#e1e2eb",
+              "on-surface-variant": "#c2c6d5",
+              outline: "#8c909e",
+              primary: "#adc6ff",
+              "on-primary": "#002e6a",
+            },
+            spacing: {
+              "margin-desktop": "2.5rem",
+              "space-xs": "0.25rem",
+              "space-2xs": "0.125rem",
+              "space-sm": "0.5rem",
+              "space-md": "0.75rem",
+              "space-lg": "1rem",
+            },
+            fontFamily: {
+              "body-md": ["Geist"],
+              "body-sm": ["Geist"],
+              "headline-md": ["Space Grotesk"],
+              "label-mono": ["JetBrains Mono"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./profile.css" />
+    <link rel="stylesheet" href="./messages.css" />
+  </head>
+  <body class="profile-page messages-page">
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md"
+      style="border-bottom: 1px solid rgb(26, 28, 36)"
+    >
+      <div
+        class="h-16 w-full px-margin-desktop flex items-center justify-between gap-space-lg"
+      >
+        <div class="flex items-center gap-space-xl">
+          <a
+            class="flex items-center gap-space-sm"
+            data-path="marketplace"
+            href="./index.html"
+            ><img
+              class="h-8 w-auto object-contain"
+              src="./assets/tcg-marketplace-logo.png"
+              alt="TCG Marketplace"
+            /><span class="font-headline-md tracking-tight text-on-surface"
+              >TCG Marketplace</span
+            ></a
+          >
+          <nav class="hidden lg:flex items-center gap-space-xs">
+            <a
+              data-path="marketplace"
+              href="./index.html"
+              class="px-space-md py-space-xs rounded text-on-surface-variant"
+              >Marketplace</a
+            ><a
+              data-path="expansions"
+              href="./search.html"
+              class="px-space-md py-space-xs rounded text-on-surface-variant"
+              >Expansions</a
+            ><a
+              data-path="sell"
+              href="./sell.html"
+              class="px-space-md py-space-xs rounded text-on-surface-variant"
+              >Sell</a
+            >
+          </nav>
+        </div>
+        <div class="flex-1 max-w-xl hidden md:block">
+          <div class="relative flex items-center">
+            <span
+              class="material-symbols-outlined absolute left-space-md text-outline pointer-events-none text-[18px]"
+              >search</span
+            ><input
+              class="w-full bg-surface-container-lowest rounded py-space-xs pl-10 pr-space-md text-on-surface placeholder:text-outline focus:outline-none"
+              placeholder="Search cards, sets, or card IDs…"
+              type="search"
+            />
+          </div>
+        </div>
+        <div class="flex items-center gap-space-md">
+          <a
+            class="text-on-surface-variant hover:text-on-surface p-space-xs rounded flex"
+            data-path="wantlist"
+            href="#notifications"
+            ><span class="material-symbols-outlined text-[20px]"
+              >notifications</span
+            ></a
+          ><a
+            class="text-on-surface-variant hover:text-on-surface p-space-xs rounded relative flex"
+            data-path="cart"
+            href="./cart.html"
+            ><span class="material-symbols-outlined text-[20px]"
+              >shopping_bag</span
+            ></a
+          ><a
+            class="flex items-center ml-space-xs"
+            data-path="user-profile"
+            href="./profile.html"
+            ><span class="profile-avatar">MC</span></a
+          >
+        </div>
+      </div>
+    </header>
+    <main class="messages-main">
+      <section class="messages-heading">
+        <div>
+          <p>MARKETPLACE INBOX</p>
+          <h1>Messages</h1>
+          <span
+            >Buyer and seller conversations for your listings and orders.</span
+          >
+        </div>
+        <span class="messages-heading__count">4 active threads</span>
+      </section>
+      <section class="messages-shell">
+        <aside class="thread-list" aria-label="Message threads">
+          <div class="thread-list__head"><b>Inbox</b><span>4</span></div>
+          <div id="thread-list-items"></div>
+        </aside>
+        <section class="conversation" aria-live="polite">
+          <header class="conversation__head">
+            <div class="conversation__avatar" id="conversation-avatar"></div>
+            <div>
+              <p id="conversation-role"></p>
+              <h2 id="conversation-name"></h2>
+              <span id="conversation-presence"></span>
+            </div>
+            <button type="button" aria-label="Conversation actions">
+              <span class="material-symbols-outlined">more_horiz</span>
+            </button>
+          </header>
+          <div class="listing-context">
+            <img
+              id="listing-image"
+              src="./assets/stardust-dragon-back.png"
+              alt=""
+            />
+            <div>
+              <p>ABOUT THIS CARD</p>
+              <b id="listing-name"></b><span id="listing-price"></span>
+            </div>
+            <a id="listing-link" href="./card.html"
+              >View listing
+              <span class="material-symbols-outlined">arrow_forward</span></a
+            >
+          </div>
+          <div class="message-log" id="message-log"></div>
+          <form class="message-composer" id="message-composer">
+            <label class="sr-only" for="message-input">Write a message</label
+            ><input
+              id="message-input"
+              autocomplete="off"
+              placeholder="Write a message…"
+            /><button>
+              Send <span class="material-symbols-outlined">send</span>
+            </button>
+          </form>
+        </section>
+      </section>
+    </main>
+    <script src="./marketplace-header.js"></script>
+    <script src="./stitch-nav.js"></script>
+    <script src="./messages.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+.intro h1 em {
+  color: #adc6ff;
+}
+.welcome[data-preview="yugioh"] .intro h1 em {
+  background: linear-gradient(
+    105deg,
+    #8b5a14 0%,
+    #f8dc75 18%,
+    #fff6bb 34%,
+    #c28b23 49%,
+    #ffeca0 66%,
+    #9a6517 82%,
+    #edc757 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.welcome[data-preview="pokemon"] .intro h1 em {
+  background: linear-gradient(
+    90deg,
+    #e73635 0 58%,
+    #1b1c22 59% 61%,
+    #f7f7f2 62% 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

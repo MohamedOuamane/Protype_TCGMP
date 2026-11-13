@@ -1,0 +1,2 @@
+/* Keep the two supplied scans as distinct physical faces during the 3D rotation. */
+.dragon-card-demo__face{-webkit-backface-visibility:hidden;backface-visibility:hidden}.dragon-card-demo__front{transform:translateZ(1px)}.dragon-card-demo__back{transform:rotateY(180deg) translateZ(1px)}

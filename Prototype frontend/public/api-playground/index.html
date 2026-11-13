@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>TCG Market</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"outline":"#8c909e","on-primary-fixed-variant":"#004495","primary-fixed":"#d8e2ff","on-error-container":"#ffdad6","on-primary-container":"#dee6ff","on-tertiary":"#532200","on-background":"#e1e2eb","error-container":"#93000a","surface-dim":"#111319","on-tertiary-fixed":"#331200","surface":"#111319","surface-container-high":"#272a30","outline-variant":"#424753","secondary-fixed":"#e2e2e2","primary-container":"#2164c8","on-primary-fixed":"#001a42","tertiary-container":"#a94c00","tertiary-fixed":"#ffdbc9","primary":"#adc6ff","on-tertiary-fixed-variant":"#763300","background":"#111319","surface-tint":"#adc6ff","inverse-primary":"#0e5bbe","secondary-container":"#474747","on-surface":"#e1e2eb","on-secondary-fixed-variant":"#474747","secondary-fixed-dim":"#c6c6c6","on-error":"#690005","surface-container-low":"#191b22","surface-bright":"#373940","on-secondary-fixed":"#1b1b1b","on-primary":"#002e6a","tertiary-fixed-dim":"#ffb68d","secondary":"#c6c6c6","surface-container":"#1d2026","surface-variant":"#32353b","surface-container-lowest":"#0c0e14","on-secondary":"#303030","primary-fixed-dim":"#adc6ff","surface-container-highest":"#32353b","on-surface-variant":"#c2c6d5","inverse-on-surface":"#2e3037","error":"#ffb4ab","on-secondary-container":"#b5b5b5","tertiary":"#ffb68d","on-tertiary-container":"#ffe1d2","inverse-surface":"#e1e2eb"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"space-xl":"1.5rem","margin-tablet":"1.5rem","gutter-desktop":"1.5rem","space-xs":"0.25rem","margin-desktop":"2.5rem","gutter":"1rem","margin":"1rem","space-2xl":"2.5rem","space-2xs":"0.125rem","space-lg":"1rem","space-sm":"0.5rem","space-md":"0.75rem"},fontFamily:{"headline-lg-mobile":["Space Grotesk"],"body-sm":["Geist"],"headline-xl":["Space Grotesk"],"body-md":["Geist"],"label-caps":["Space Grotesk"],"metric-display":["JetBrains Mono"],"headline-lg":["Space Grotesk"],"label-mono":["JetBrains Mono"],"headline-xl-mobile":["Space Grotesk"],"body-lg":["Geist"],"metric-mono":["JetBrains Mono"],"headline-md":["Space Grotesk"],"metric-large":["JetBrains Mono"]},fontSize:{"headline-lg-mobile":["24px",{"lineHeight":"30px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-xl":["48px",{"lineHeight":"52px","letterSpacing":"-0.03em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"label-caps":["11px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"700"}],"metric-display":["28px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-mono":["10px",{"lineHeight":"12px","letterSpacing":"0.05em","fontWeight":"500"}],"headline-xl-mobile":["32px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"metric-mono":["13px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"headline-md":["20px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"600"}],"metric-large":["18px",{"lineHeight":"22px","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-md" style="border-bottom: 1px solid rgb(26, 28, 36); background-color: rgba(8, 9, 12, 0.88);"><div class="h-16 w-full px-margin-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-xl"><a class="flex items-center gap-space-sm" data-path="marketplace" href="#"><img alt="Brand logo. - Primary color: #4ade80
+- Font: spaceGrotesk
+- Mode: dark
+- Roundness: rounded-lg
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X505dF34neO8rFLq4Yvlfs9DigeYvOOdj7uW5ZyC0pipjEne-AgQbcthpXL11vWIIANgn-tEB0r9F0qyCiHJc9SWL37g0qLl3B_vl2mB4vtdUFkY387kbkyddn7hvV1MKbI4NipG6XBOHI-3Zg5N1fi2mFeEiDCH2atXrskPeNYZcv6BrW69gSPEc-KYcVO8g-wzHp6lwEHhHYiZMedS4PrC33vLvCmB0CWom-XZggtw0PH_fP6Qdi7gjI"/><span class="font-headline-md text-headline-md tracking-tight text-on-surface">TCG Market</span></a><nav class="hidden lg:flex items-center gap-space-xs" data-active-classes="bg-surface-container-high text-on-surface font-semibold"><a aria-current="page" class="px-space-md py-space-xs rounded transition-colors bg-surface-container-high text-on-surface font-semibold" data-path="marketplace" href="#">Marketplace</a><a class="px-space-md py-space-xs rounded text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="expansions" href="#">Expansions</a><a class="px-space-md py-space-xs rounded text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="sell" href="#">Sell</a></nav></div><div class="flex-1 max-w-xl hidden md:block"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-space-md text-outline pointer-events-none text-[18px]">search</span><input class="w-full bg-surface-container-lowest rounded py-space-xs pl-10 pr-space-md font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-low transition-colors" placeholder="Search cards, expansions..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs font-label-mono text-label-mono text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer px-space-xs py-space-2xs rounded hover:bg-surface-container"><span class="material-symbols-outlined text-[16px]">language</span><span class="">EUR / EN</span></div><a class="text-on-surface-variant hover:text-on-surface transition-colors p-space-xs rounded hover:bg-surface-container flex items-center justify-center" data-path="wantlist" href="#"><span class="material-symbols-outlined text-[20px]">bookmark</span></a><a class="text-on-surface-variant hover:text-on-surface transition-colors p-space-xs rounded hover:bg-surface-container relative flex items-center justify-center" data-path="cart" href="#"><span class="material-symbols-outlined text-[20px]">shopping_bag</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary"></span></a><a class="flex items-center ml-space-xs" data-path="user-profile" href="#"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1Xm-leqZTax0uiSH2rgPyLTgQ-IT2iFhtvPplPZnpOGNQ_Vx4r2ZnMcvRNOvpmf_2Tqk6OQlKcQoqMTFuDg_50RIXZgkTBXwRPzHxI3AzbW48279JqVesUBDa_FbJnS0wPZekBW2zyFWlTGYzJW5Cul0ShNK_q-SRmnGV48eRSJymJ2aLxfHaR3ihnlTwTwz5ZbEooDhKKLUcfl58AuWs7keT0l0aKnd0Nl-fzF00ExRcvqVMhhqpHBvk-7"/></a></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-16rem)]"><div class="flex flex-col w-full">
+<!-- SEARCH & METRIC BAR -->
+<section class="w-full px-margin-desktop py-space-xl">
+<div class="max-w-5xl mx-auto flex flex-col items-center text-center">
+<!-- Subtle Tagline -->
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-space-xs">Interactive Marketplace Prototype</span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mb-space-lg">
+        Buy and sell trading cards directly with collectors.
+      </h1>
+<!-- Integrated Search Box -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-xs shadow-xl flex flex-col md:flex-row items-stretch gap-space-xs" style="background-color: rgb(17, 19, 26); border: 1px solid rgb(32, 35, 46); box-shadow: rgba(0, 0, 0, 0.7) 0px 10px 30px -10px;">
+<div class="relative flex-1 flex items-center bg-surface-container-lowest rounded-lg px-space-md py-space-sm" style="background-color: rgb(11, 12, 16); border: 1px solid rgb(26, 28, 36);">
+<span class="material-symbols-outlined text-outline text-[20px] mr-space-sm pointer-events-none">search</span>
+<input class="w-full bg-transparent font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none" placeholder="Search card name, expansion set, or collector..." type="text"/>
+<kbd class="hidden sm:inline-block font-label-mono text-label-mono text-outline px-space-xs py-space-2xs bg-surface-container rounded">⌘K</kbd>
+</div>
+<button class="bg-primary hover:bg-primary-fixed text-on-primary font-label-caps text-label-caps uppercase px-space-xl py-space-md rounded-lg flex items-center justify-center gap-space-xs transition-colors">
+<span class="">Search Market</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Quick Platform Telemetry Strip -->
+<div class="flex flex-wrap items-center justify-center gap-x-space-xl gap-y-space-xs pt-space-xs text-outline font-label-mono text-label-mono">
+<div class="flex items-center gap-space-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-on-surface font-metric-mono font-medium">4,281,904</span>
+<span class="">Cards Listed</span>
+</div>
+<span class="hidden sm:inline text-surface-container-highest">•</span>
+<div class="flex items-center gap-space-xs">
+<span class="text-on-surface font-metric-mono font-medium">120,419</span>
+<span class="">Active Collectors</span>
+</div>
+<span class="hidden sm:inline text-surface-container-highest">•</span>
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+<span class="text-on-surface">100% P2P Buyer Protection</span>
+</div>
+</div>
+</div>
+</section>
+<!-- POPULAR EXPANSIONS QUICK ACCESS ROW -->
+<section class="w-full px-margin-desktop py-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-label-caps text-label-caps uppercase text-outline tracking-wider">Top Expansions</h3>
+<a class="font-label-mono text-label-mono text-primary hover:text-on-primary-container transition-colors flex items-center gap-space-2xs" data-path="expansions" href="#">
+<span class="">View all sets</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-space-sm" style="--card-bg: #0d0e13; --card-border: #1a1c24;">
+<!-- Expansion 1 -->
+<div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors rounded-lg p-space-md flex items-center gap-space-md cursor-pointer group">
+<div class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-md text-[14px] leading-5 text-on-surface truncate">Prismatic Evolutions</span>
+<span class="font-label-mono text-label-mono text-outline">Pokémon • 2025</span>
+</div>
+</div>
+<!-- Expansion 2 -->
+<div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors rounded-lg p-space-md flex items-center gap-space-md cursor-pointer group">
+<div class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">swords</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-md text-[14px] leading-5 text-on-surface truncate">Modern Horizons 3</span>
+<span class="font-label-mono text-label-mono text-outline">MTG • 2024</span>
+</div>
+</div>
+<!-- Expansion 3 -->
+<div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors rounded-lg p-space-md flex items-center gap-space-md cursor-pointer group">
+<div class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">20mp</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-md text-[14px] leading-5 text-on-surface truncate">151 Pokémon</span>
+<span class="font-label-mono text-label-mono text-outline">Pokémon • 2023</span>
+</div>
+</div>
+<!-- Expansion 4 -->
+<div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors rounded-lg p-space-md flex items-center gap-space-md cursor-pointer group">
+<div class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center text-primary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">sailing</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-md text-[14px] leading-5 text-on-surface truncate">Romance Dawn OP-01</span>
+<span class="font-label-mono text-label-mono text-outline">One Piece • 2022</span>
+</div>
+</div>
+<!-- Expansion 5 -->
+<div class="bg-surface-container-lowest hover:bg-surface-container-low transition-colors rounded-lg p-space-md flex items-center gap-space-md cursor-pointer group">
+<div class="w-10 h-10 rounded bg-surface-container-high flex items-center justify-center text-tertiary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">hotel_class</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-md text-[14px] leading-5 text-on-surface truncate">Base Set</span>
+<span class="font-label-mono text-label-mono text-outline">Vintage • 1999</span>
+</div>
+</div>
+</div>
+</section>
+<!-- TRENDING CARDS SECTION -->
+<section class="w-full px-margin-desktop py-space-xl">
+<!-- Header with Sort Tabs -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Trending Cards</h2>
+<span class="bg-surface-container-high text-primary font-label-mono text-label-mono px-space-xs py-space-2xs rounded">Live Orders</span>
+</div>
+<!-- Filter Controls Segmented Bar -->
+<div class="flex items-center bg-surface-container-lowest p-space-2xs rounded-lg">
+<button class="sort-tab-btn active px-space-md py-space-xs rounded bg-surface-container-high text-on-surface font-label-mono text-label-mono font-medium transition-colors" data-sort="popular">
+          Most Popular
+        </button>
+<button class="sort-tab-btn px-space-md py-space-xs rounded text-outline hover:text-on-surface font-label-mono text-label-mono font-medium transition-colors" data-sort="movers">
+          Price Movers
+        </button>
+<button class="sort-tab-btn px-space-md py-space-xs rounded text-outline hover:text-on-surface font-label-mono text-label-mono font-medium transition-colors" data-sort="recent">
+          Recently Added
+        </button>
+</div>
+</div>
+<!-- 4-Column Card Grid (Clean raw cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg" style="gap: 1.25rem;">
+<!-- Card Item 1: Charizard Base Set -->
+<div class="group bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 rounded-xl p-space-md flex flex-col cursor-pointer shadow-md">
+<div class="relative w-full aspect-[5/7] bg-surface-container-lowest rounded-lg overflow-hidden mb-space-md flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="Raw Charizard Base Set holographic trading card clean high resolution macro close-up against a deep dark gray slate backdrop studio lighting displaying crisp vintage artwork" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB2S04qyazMb761O_4Jj6gLPD2r9EhU5_HvpMLj74EqXdg1h7L5BZ2ZZZ0PO4hjKuexrMBRuNjbxxsU0oAf3Jg6KOyb4786UIbBIO27dn44jDhREle3fdC4eZuFDHaerVaZuCS6Y6B56YeMWukmaaTMabfx4C-vZdqYdkJpkXBjZaRgE1kLDtLEX1TLfOzoBwwvAd47vUl2gYScY6tQ2LCTCul0q0-vkVELbLp0OwQuslptrvNZHYWrA"/>
+<div class="absolute top-space-xs right-space-xs bg-surface-dim/80 backdrop-blur-md px-space-xs py-space-2xs rounded text-outline font-label-mono text-label-mono">
+            RAW
+          </div>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between text-outline font-label-mono text-label-mono mb-space-2xs">
+<span class="">Base Set • 1999</span>
+<span class="text-primary font-medium">148 offers</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate mb-space-sm group-hover:text-primary transition-colors">
+            Charizard
+          </h3>
+<div class="mt-auto pt-space-xs flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-outline">From</span>
+<span class="font-metric-display text-[22px] leading-6 text-on-surface font-semibold">$145.00</span>
+</div>
+<button class="bg-surface-container-high group-hover:bg-primary group-hover:text-on-primary text-on-surface-variant font-label-mono text-label-mono px-space-sm py-space-xs rounded transition-colors flex items-center gap-space-2xs">
+<span class="">Offers</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card Item 2: Black Lotus Beta -->
+<div class="group bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 rounded-xl p-space-md flex flex-col cursor-pointer shadow-md">
+<div class="relative w-full aspect-[5/7] bg-surface-container-lowest rounded-lg overflow-hidden mb-space-md flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="Beta Black Lotus Magic The Gathering vintage card authentic condition centered on dark minimalist surface moody studio lighting sharp focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgcIV3IppXXO2a8BQEULci9GnkXH8VG05eX4G9tR4GFWeF3TNU8GsPAAEkqRQ89z96JkBqhOAB4nosAFsFouO1ikCJM4-2EuHJM9kv4dS2bhyifWBjikKHyyMpUN6vQ1Xfj8188TKNnEVvw7qQL2L2CbBLecHkV8R-C42qyR9wWMvPpjTtF38LtJpEWb-EE7QYfDea39YIOeilwl8-L4moc34IapsDQwFaNXAaYDyZ7FXrKtVY_ysVvw"/>
+<div class="absolute top-space-xs right-space-xs bg-surface-dim/80 backdrop-blur-md px-space-xs py-space-2xs rounded text-outline font-label-mono text-label-mono">
+            RAW
+          </div>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between text-outline font-label-mono text-label-mono mb-space-2xs">
+<span class="">Beta MTG • 1993</span>
+<span class="text-primary font-medium">6 offers</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate mb-space-sm group-hover:text-primary transition-colors">
+            Black Lotus
+          </h3>
+<div class="mt-auto pt-space-xs flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-outline">From</span>
+<span class="font-metric-display text-[22px] leading-6 text-on-surface font-semibold">$18,500.00</span>
+</div>
+<button class="bg-surface-container-high group-hover:bg-primary group-hover:text-on-primary text-on-surface-variant font-label-mono text-label-mono px-space-sm py-space-xs rounded transition-colors flex items-center gap-space-2xs">
+<span class="">Offers</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card Item 3: Gengar VMAX Alt Art -->
+<div class="group bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 rounded-xl p-space-md flex flex-col cursor-pointer shadow-md">
+<div class="relative w-full aspect-[5/7] bg-surface-container-lowest rounded-lg overflow-hidden mb-space-md flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="Gengar VMAX Alternate Art Fusion Strike vibrant purple Pokémon card artwork dark atmospheric background clinical sharp focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRal8ihKnBNnXY06zJ3PSZ4fyMC9DTzHkOe4NWazqQdN2AIYE2JK8hg2_8sO9ol_E9p3a2vJ9LQmGJiDH6oKp1vOGvXZ6dYWFGVbFhYoeYHtyptTmyXZbCFbVH3Z4hmoZb4RrXY8tFlKOAPpleDBdJfG0kCqd8V1cvEpYZTQBRthXo2AOntMYgZHzwb3R2HiVIGxav-IwOfPfYYNsbrkaJ-l68Efgi7CzhdSVFhHkuCLwLA2H4B1rCfw"/>
+<div class="absolute top-space-xs right-space-xs bg-surface-dim/80 backdrop-blur-md px-space-xs py-space-2xs rounded text-outline font-label-mono text-label-mono">
+            RAW
+          </div>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between text-outline font-label-mono text-label-mono mb-space-2xs">
+<span class="">Fusion Strike • 2021</span>
+<span class="text-primary font-medium">84 offers</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate mb-space-sm group-hover:text-primary transition-colors">
+            Gengar VMAX Alt Art
+          </h3>
+<div class="mt-auto pt-space-xs flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-outline">From</span>
+<span class="font-metric-display text-[22px] leading-6 text-on-surface font-semibold">$420.00</span>
+</div>
+<button class="bg-surface-container-high group-hover:bg-primary group-hover:text-on-primary text-on-surface-variant font-label-mono text-label-mono px-space-sm py-space-xs rounded transition-colors flex items-center gap-space-2xs">
+<span class="">Offers</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card Item 4: Monkey D. Luffy Manga -->
+<div class="group bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 rounded-xl p-space-md flex flex-col cursor-pointer shadow-md">
+<div class="relative w-full aspect-[5/7] bg-surface-container-lowest rounded-lg overflow-hidden mb-space-md flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="Monkey D Luffy Manga Rare OP-05 One Piece trading card black and white stylized anime card pristine condition dark aesthetic background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNurWJgK-czE4nmoEyhy9BXtQ0KgxzcnLGziNHjccmiufrRpAxrOTx8bYh6HScZUt5guKKEyi20kcSdv1kqflxSTO7n5KHUKRvMmkucIegZaucM3cxDx0e-eFwCYJq8K-av_0eY_9-0B_8E5qG6IOEviuFre8UjXdHmbI8qPbxliU7vRQRexRBmZBYY9QoHCS9mQjmUGgqrh6jegJxHNo4b1olE5O-M73AXI8NSETG2szc_6gXBw2vuA"/>
+<div class="absolute top-space-xs right-space-xs bg-surface-dim/80 backdrop-blur-md px-space-xs py-space-2xs rounded text-outline font-label-mono text-label-mono">
+            RAW
+          </div>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between text-outline font-label-mono text-label-mono mb-space-2xs">
+<span class="">Awakening of New Era (OP-05)</span>
+<span class="text-primary font-medium">19 offers</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate mb-space-sm group-hover:text-primary transition-colors">
+            Monkey D. Luffy Manga
+          </h3>
+<div class="mt-auto pt-space-xs flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-outline">From</span>
+<span class="font-metric-display text-[22px] leading-6 text-on-surface font-semibold">$1,650.00</span>
+</div>
+<button class="bg-surface-container-high group-hover:bg-primary group-hover:text-on-primary text-on-surface-variant font-label-mono text-label-mono px-space-sm py-space-xs rounded transition-colors flex items-center gap-space-2xs">
+<span class="">Offers</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card Item 5: Umbreon VMAX Alt Art -->
+<div class="group bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 rounded-xl p-space-md flex flex-col cursor-pointer shadow-md">
+<div class="relative w-full aspect-[5/7] bg-surface-container-lowest rounded-lg overflow-hidden mb-space-md flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="Umbreon VMAX Moonbreon Alternate Art Evolving Skies dark night blue aesthetic moon illustration trading card collector studio shot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-CJCayVG7xONM60VPpQezwEVyV1uJwBAkX0PG4cOVBM_3bN7QrUoe3Bx7Pel9EXWUq1JDZ0AhoUY3f9KXxW7cvL-F8CI2Zv9zRgYLlbjIm4xlZCNWd23ShofwQ5HPJ2_Q0reFBZAlJBdL4tgccy-wCGx1ftokZw7MBnMx9A_R5t0NRR-XiN8O8c2C2C-SOcZBwnLdkqnUTDVtSCEIqC7MoUwjVQhK_vN-kcN-WDXlr8C80-DNtJf9ig"/>
+<div class="absolute top-space-xs right-space-xs bg-surface-dim/80 backdrop-blur-md px-space-xs py-space-2xs rounded text-outline font-label-mono text-label-mono">
+            RAW
+          </div>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between text-outline font-label-mono text-label-mono mb-space-2xs">
+<span class="">Evolving Skies • 2021</span>
+<span class="text-primary font-medium">52 offers</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate mb-space-sm group-hover:text-primary transition-colors">
+            Umbreon VMAX Alt Art
+          </h3>
+<div class="mt-auto pt-space-xs flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-outline">From</span>
+<span class="font-metric-display text-[22px] leading-6 text-on-surface font-semibold">$890.00</span>
+</div>
+<button class="bg-surface-container-high group-hover:bg-primary group-hover:text-on-primary text-on-surface-variant font-label-mono text-label-mono px-space-sm py-space-xs rounded transition-colors flex items-center gap-space-2xs">
+<span class="">Offers</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card Item 6: Blue-Eyes White Dragon LOB -->
+<div class="group bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 rounded-xl p-space-md flex flex-col cursor-pointer shadow-md">
+<div class="relative w-full aspect-[5/7] bg-surface-container-lowest rounded-lg overflow-hidden mb-space-md flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="Yu-Gi-Oh Legend of Blue Eyes White Dragon original 1st edition mint card dark sleek slate backdrop museum quality display" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-eF1G8Nl0SVvkQPYWSmYY59yHemJ3951GbDa4v18frLZNF_9Z05AU656Jkj-3e3MwXSiO-oTnePOwOK3lZSd0HDD8acJPL1czOAd8fwGptMAoGMJb6Hc1qhFQAjGFyf3M2szK1sV9wyJ580Uk0jkA4z_ZSq9pwdLuhWE73uOQQyuMy9coneX9kvAWwyRf2f_ZK8KDeYw9ykvI6lIKBxO-31ghpBRGrLVUcVjPkvaN6bBQKO4mKHPOFQ"/>
+<div class="absolute top-space-xs right-space-xs bg-surface-dim/80 backdrop-blur-md px-space-xs py-space-2xs rounded text-outline font-label-mono text-label-mono">
+            RAW
+          </div>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between text-outline font-label-mono text-label-mono mb-space-2xs">
+<span class="">Legend of Blue Eyes (LOB)</span>
+<span class="text-primary font-medium">37 offers</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate mb-space-sm group-hover:text-primary transition-colors">
+            Blue-Eyes White Dragon
+          </h3>
+<div class="mt-auto pt-space-xs flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-outline">From</span>
+<span class="font-metric-display text-[22px] leading-6 text-on-surface font-semibold">$310.00</span>
+</div>
+<button class="bg-surface-container-high group-hover:bg-primary group-hover:text-on-primary text-on-surface-variant font-label-mono text-label-mono px-space-sm py-space-xs rounded transition-colors flex items-center gap-space-2xs">
+<span class="">Offers</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card Item 7: Elsa Spirit of Winter -->
+<div class="group bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 rounded-xl p-space-md flex flex-col cursor-pointer shadow-md">
+<div class="relative w-full aspect-[5/7] bg-surface-container-lowest rounded-lg overflow-hidden mb-space-md flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="Disney Lorcana Elsa Spirit of Winter Enchanted card crystalline ice foil reflection dark graphite background high definition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByajkj5H9_2vsPSCMnbQMU2pkM5jh46YgykZRewVMPROBV2mGoJ3PeXhwoKniO21GhDBrmNEZKwpwTc6aTLWICBWGO8WxnS8NJlyGksTkCz9efhago4vHrNsjAxmIzwr-0tu0HE4fmwm8uvQ6vFcmYpGKBni5La7_qpxX6W7UGYLB8JADdh_oyTlw9iIZnS9mfqql3pdg6uvLcVDE3ZTFcdscynRXk0XLrNoiMA6yuOmBBkDxnkpIvLQ"/>
+<div class="absolute top-space-xs right-space-xs bg-surface-dim/80 backdrop-blur-md px-space-xs py-space-2xs rounded text-outline font-label-mono text-label-mono">
+            RAW
+          </div>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between text-outline font-label-mono text-label-mono mb-space-2xs">
+<span class="">First Chapter • 2023</span>
+<span class="text-primary font-medium">14 offers</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate mb-space-sm group-hover:text-primary transition-colors">
+            Elsa - Spirit of Winter
+          </h3>
+<div class="mt-auto pt-space-xs flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-outline">From</span>
+<span class="font-metric-display text-[22px] leading-6 text-on-surface font-semibold">$1,150.00</span>
+</div>
+<button class="bg-surface-container-high group-hover:bg-primary group-hover:text-on-primary text-on-surface-variant font-label-mono text-label-mono px-space-sm py-space-xs rounded transition-colors flex items-center gap-space-2xs">
+<span class="">Offers</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card Item 8: Rayquaza VMAX -->
+<div class="group bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 rounded-xl p-space-md flex flex-col cursor-pointer shadow-md">
+<div class="relative w-full aspect-[5/7] bg-surface-container-lowest rounded-lg overflow-hidden mb-space-md flex items-center justify-center">
+<img class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300" data-alt="Rayquaza VMAX Alternate Art card majestic green dragon circling temple sky landscape foil texture dark moody background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAezaH-deXLmHLFuQHAsz2iMyOanAXU8fHEkmp1rDkFgW2PKRF0F4zU_FY7qMLnvzBLuXttvNZhVnCPurSfKmXT2UhiT2248Mdgdm6a2xa09KiVaghwbnijsOqITUZq1PxmUFeS3Tilx4a0ZuwuIAIoqv4UhoDodsLVs5eLQcBREr4fSjh31XyGUWxQThNp42EBAwywFugxk3PHohO1Rr4SfZEVnJQacLGvVUbv4_4V3cpbECsO2oaFNw"/>
+<div class="absolute top-space-xs right-space-xs bg-surface-dim/80 backdrop-blur-md px-space-xs py-space-2xs rounded text-outline font-label-mono text-label-mono">
+            RAW
+          </div>
+</div>
+<div class="flex flex-col flex-1">
+<div class="flex items-center justify-between text-outline font-label-mono text-label-mono mb-space-2xs">
+<span class="">Evolving Skies • 2021</span>
+<span class="text-primary font-medium">41 offers</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface truncate mb-space-sm group-hover:text-primary transition-colors">
+            Rayquaza VMAX
+          </h3>
+<div class="mt-auto pt-space-xs flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-mono text-label-mono text-outline">From</span>
+<span class="font-metric-display text-[22px] leading-6 text-on-surface font-semibold">$680.00</span>
+</div>
+<button class="bg-surface-container-high group-hover:bg-primary group-hover:text-on-primary text-on-surface-variant font-label-mono text-label-mono px-space-sm py-space-xs rounded transition-colors flex items-center gap-space-2xs">
+<span class="">Offers</span>
+<span class="material-symbols-outlined text-[14px]">arrow_outward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- REPUTATION & TRUST PILLARS -->
+<section class="w-full px-margin-desktop py-space-xl">
+<div class="w-full bg-surface-container-lowest rounded-2xl p-space-xl" style="background-color: rgb(13, 15, 20); border: 1px solid rgb(28, 30, 40); box-shadow: rgba(0, 0, 0, 0.4) 0px 4px 20px;">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-xl">
+<!-- Pillar 1 -->
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-space-xs">Direct Shipping</h4>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Sellers package carefully and ship directly to you with postal tracking on every single transaction.
+            </p>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">shield</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-space-xs">Buyer Protection</h4>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Escrow funds stay safe until inspection. Full refund guarantee if card condition or grade diverges.
+            </p>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">percent</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-space-xs">Low 5% Flat Fee</h4>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              Transparent 5% seller fee upon delivery. No hidden buyer premiums or unexpected checkout charges.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Simple interactive filter tabs
+  document.querySelectorAll('.game-filter-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('.game-filter-btn').forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-on-primary', 'active');
+        btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+      button.classList.add('bg-primary', 'text-on-primary', 'active');
+      button.classList.remove('bg-surface-container', 'text-on-surface-variant');
+    });
+  });
+
+  // Sort tab controls
+  document.querySelectorAll('.sort-tab-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('.sort-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-surface-container-high', 'text-on-surface', 'active');
+        btn.classList.add('text-outline');
+      });
+      button.classList.add('bg-surface-container-high', 'text-on-surface', 'active');
+      button.classList.remove('text-outline');
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-lowest mt-space-2xl" style="background-color: rgb(9, 10, 13); border-top: 1px solid rgb(24, 26, 34);"><div class="w-full px-margin-desktop py-space-2xl"><div class="grid grid-cols-2 md:grid-cols-4 gap-space-xl mb-space-2xl"><div><h4 class="font-label-caps text-label-caps text-outline uppercase mb-space-md">Buy</h4><ul class="space-y-space-sm font-body-sm text-body-sm"><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="marketplace" href="#">Singles</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="expansions" href="#">Sets &amp; Boosters</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="cart" href="#">Shopping Cart</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="wantlist" href="#">Wantlist</a></li></ul></div><div><h4 class="font-label-caps text-label-caps text-outline uppercase mb-space-md">Sell</h4><ul class="space-y-space-sm font-body-sm text-body-sm"><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="sell" href="#">Start Selling</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="sell-guide" href="#">Grading Guide</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="fee-calculator" href="#">Fee Structure</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="bulk-upload" href="#">Bulk Sync</a></li></ul></div><div><h4 class="font-label-caps text-label-caps text-outline uppercase mb-space-md">About</h4><ul class="space-y-space-sm font-body-sm text-body-sm"><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#">Platform</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="trust-safety" href="#">Buyer Protection</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="market-insights" href="#">Market Trends</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="contact" href="#">Press &amp; Contact</a></li></ul></div><div><h4 class="font-label-caps text-label-caps text-outline uppercase mb-space-md">Help &amp; Rules</h4><ul class="space-y-space-sm font-body-sm text-body-sm"><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="help" href="#">Support Center</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="shipping-guidelines" href="#">Shipping Guidelines</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="terms" href="#">Terms of Service</a></li><li class=""><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacy" href="#">Privacy Policy</a></li></ul></div></div><div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-lg text-on-surface-variant font-label-mono text-label-mono"><p class="">© 2025 TCG Market. Independent peer-to-peer card marketplace.</p><p class="text-outline">All trademarks belong to their respective owners.</p></div></div></footer>
+<script src="./home-game-theme.js"></script><script src="./yugioh-banner.js"></script><script src="./pokemon-banner.js"></script><script src="./dragon-card-tilt.js"></script><script src="./marketplace-header.js"></script><script src="./stitch-nav.js?v=1"></script><script src="./stitch-home.js?v=1"></script></body></html>

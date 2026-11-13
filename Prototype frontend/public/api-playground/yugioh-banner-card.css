@@ -1,0 +1,185 @@
+.ygo-intro-banner__panel {
+  border: 0 !important;
+}
+.ygo-banner-card-heading {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 25px;
+  width: 100%;
+  padding: 0 18px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.ygo-banner-card-title {
+  margin: 0;
+  color: #fff;
+  font:
+    700 clamp(19px, 2vw, 28px)/1 "Space Grotesk",
+    sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-shadow: 0 3px 8px #000;
+  white-space: nowrap;
+}
+.ygo-banner-card-subtitle {
+  margin: 7px auto 0;
+  max-width: 300px;
+  color: #e6d9dccc;
+  font:
+    400 clamp(11px, 1.1vw, 13px)/1.35 Geist,
+    sans-serif;
+}
+.ygo-intro-banner__panel .ygo-banner-card {
+  position: absolute;
+  right: auto;
+  top: 57%;
+  width: clamp(138px, 14vw, 210px);
+  height: auto;
+  opacity: 1;
+  filter: drop-shadow(0 20px 16px #0009);
+  text-decoration: none;
+  transition:
+    transform 0.24s cubic-bezier(0.2, 0.75, 0.2, 1),
+    filter 0.24s ease;
+}
+.ygo-banner-card--left {
+  left: 22%;
+  z-index: 1;
+  transform: translate(-50%, -50%) rotate(-11deg);
+}
+.ygo-intro-banner__panel .ygo-banner-card--center {
+  left: 50%;
+  top: 53%;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+}
+.ygo-banner-card--right {
+  left: 78%;
+  z-index: 2;
+  transform: translate(-50%, -50%) rotate(11deg);
+}
+.ygo-banner-card--left:is(:hover, :focus-visible) {
+  z-index: 10;
+  transform: translate(-50%, -56%) rotate(-4deg) scale(1.16);
+  filter: drop-shadow(0 28px 20px #000d);
+}
+.ygo-banner-card--center:is(:hover, :focus-visible) {
+  z-index: 10;
+  transform: translate(-50%, -56%) scale(1.16);
+  filter: drop-shadow(0 28px 20px #000d);
+}
+.ygo-banner-card--right:is(:hover, :focus-visible) {
+  z-index: 10;
+  transform: translate(-50%, -56%) rotate(4deg) scale(1.16);
+  filter: drop-shadow(0 28px 20px #000d);
+}
+.ygo-card-market-info {
+  position: absolute;
+  z-index: 5;
+  right: 8%;
+  bottom: 8%;
+  left: 8%;
+  display: grid;
+  gap: 4px;
+  padding: 8px 9px;
+  border: 1px solid #ffffff1a;
+  border-radius: 5px;
+  background: #08080ba8;
+  box-shadow: 0 8px 18px #0006;
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  transform: translateY(7px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+  pointer-events: none;
+}
+.ygo-banner-card:is(:hover, :focus-visible) .ygo-card-market-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+.ygo-card-market-info__name {
+  overflow: hidden;
+  color: #fff;
+  font:
+    600 clamp(9px, 0.9vw, 11px)/1.15 "Space Grotesk",
+    sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ygo-card-market-info__price {
+  color: #f8d990;
+  font:
+    600 clamp(8px, 0.75vw, 10px)/1 "JetBrains Mono",
+    monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.ygo-banner-card-cta {
+  position: absolute;
+  z-index: 6;
+  right: 20px;
+  bottom: 16px;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: #ffe2a0;
+  font:
+    600 10px/1 "JetBrains Mono",
+    monospace;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.ygo-banner-card-cta:hover {
+  color: #fff;
+}
+.ygo-banner-card-cta span {
+  font-size: 17px;
+  line-height: 10px;
+  transition: transform 0.2s ease;
+}
+.ygo-banner-card-cta:hover span {
+  transform: translateX(3px);
+}
+.ygo-banner-card--left .dragon-card-demo__hint,
+.ygo-banner-card--right .dragon-card-demo__hint {
+  display: none;
+}
+.ygo-banner-card--center .dragon-card-demo__hint {
+  bottom: -24px;
+}
+@media (max-width: 820px) {
+  .ygo-banner-card-heading {
+    top: 16px;
+  }
+  .ygo-banner-card-subtitle {
+    font-size: 10px;
+  }
+  .ygo-intro-banner__panel .ygo-banner-card {
+    display: block;
+    top: 58%;
+    width: clamp(104px, 28vw, 154px);
+  }
+  .ygo-banner-card--left {
+    left: 17%;
+  }
+  .ygo-banner-card--right {
+    left: 83%;
+  }
+  .ygo-banner-card-cta {
+    right: 13px;
+    bottom: 10px;
+    font-size: 9px;
+  }
+  .ygo-card-market-info {
+    padding: 6px;
+  }
+  .ygo-card-market-info__name {
+    font-size: 8px;
+  }
+  .ygo-card-market-info__price {
+    font-size: 7px;
+  }
+}

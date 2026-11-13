@@ -1,0 +1,10 @@
+.choice-art{width:100%!important;height:100%!important;background-position:center!important;background-size:cover!important;transition:background-image .2s ease}
+.pokemon-choice .choice-art{background-image:linear-gradient(#d9edff70,#fff5d870),url("./assets/pokemon-card-background.png")}
+.yugioh-choice .choice-art{background-image:linear-gradient(#200b1d66,#51250c3d),url("./assets/yugioh-card-background.webp")}
+.welcome[data-preview="pokemon"]{background-image:linear-gradient(#071b3a8a,#122d548a),url("./assets/pokemon-champions.jpg");background-position:center;background-size:cover}
+.welcome[data-preview="yugioh"]{background-image:linear-gradient(#1b1029aa,#38102a92),url("./assets/yugioh-hieroglyphs.webp");background-position:center;background-size:cover}
+.welcome[data-preview="yugioh"]::after{content:"";position:absolute;inset:0;z-index:1;background:url("./assets/yugioh-yugi.webp") center/cover no-repeat;opacity:.42;pointer-events:none}
+.game-logo{position:absolute;z-index:2;left:50%;top:47%;width:min(72%,290px);max-height:130px;object-fit:contain;transform:translate(-50%,-50%);filter:drop-shadow(0 4px 2px #1119);transition:transform .25s ease,opacity .25s ease}.yugioh-logo{width:min(76%,305px)}
+.game-choice:hover .game-logo,.game-choice:focus-visible .game-logo{transform:translate(-50%,-50%) scale(1.06)}
+.game-choice:hover .choice-art:after,.game-choice:focus-visible .choice-art:after{content:"";position:absolute;inset:0;background:#10192c18;z-index:1}
+.choice-copy,.choice-arrow{z-index:3}
