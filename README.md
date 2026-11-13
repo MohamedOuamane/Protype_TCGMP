@@ -15,8 +15,9 @@ Open [http://localhost:8080](http://localhost:8080). The script installs fronten
 For frontend development with Vite:
 
 ```sh
-npm --prefix "Prototype frontend" ci
-npm --prefix "Prototype frontend" run dev
+cd "Prototype frontend"
+npm ci
+npm run dev
 ```
 
 ## Deploy to Vercel
